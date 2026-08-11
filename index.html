@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atelier Numera — Sites vitrines livrés en 48h, prix fixe</title>
+<meta name="description" content="Atelier Numera crée des sites vitrines rapides, modernes et conformes pour restaurants, artisans et commerces — livrés en 48h, à prix fixe, sans abonnement.">
+<style>
+  :root{--accent:#0f766e;--accent2:#14b8a6;--ink:#111827;--paper:#f8fafc;--muted:#5b6572;--card:#fff;--radius:16px;--max:1080px}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font:16px/1.65 "Segoe UI",system-ui,sans-serif;color:var(--ink);background:var(--paper)}
+  a{color:var(--accent)}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+  header{position:sticky;top:0;z-index:10;background:rgba(248,250,252,.94);backdrop-filter:blur(8px);border-bottom:1px solid #e5eaf0}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;max-width:var(--max);margin:0 auto}
+  .logo{font-weight:800;font-size:1.15rem;color:var(--ink);text-decoration:none}
+  .logo span{color:var(--accent)}
+  nav ul{display:flex;gap:22px;list-style:none}
+  nav a{text-decoration:none;color:var(--ink);font-weight:500}
+  .cta{background:var(--accent);color:#fff !important;padding:9px 18px;border-radius:999px;font-weight:600}
+  .hero{text-align:center;padding:88px 20px 64px;background:
+    radial-gradient(700px 320px at 15% 0%,#d9f2ef 0%,transparent 60%),
+    radial-gradient(700px 320px at 85% 5%,#dcefe4 0%,transparent 60%)}
+  .hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;line-height:1.12}
+  .hero h1 em{color:var(--accent);font-style:normal}
+  .hero p{margin:18px auto 30px;color:var(--muted);max-width:58ch;font-size:1.1rem}
+  .btn{display:inline-block;text-decoration:none;font-weight:700;padding:13px 28px;border-radius:999px}
+  .btn-primary{background:var(--accent);color:#fff}
+  .btn-ghost{border:2px solid var(--ink);color:var(--ink);margin-left:10px}
+  .strip{background:var(--ink);color:#eef2f7;padding:14px 0}
+  .strip .wrap{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;font-size:.95rem}
+  section{padding:66px 0}
+  h2{font-size:clamp(1.5rem,3vw,2.1rem);margin-bottom:8px}
+  .sub{color:var(--muted);margin-bottom:34px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+  .card{background:var(--card);border:1px solid #e5eaf0;border-radius:var(--radius);padding:26px;box-shadow:0 4px 14px rgba(17,24,39,.05)}
+  .card h3{margin-bottom:8px;font-size:1.1rem}
+  .card p{color:var(--muted);font-size:.97rem}
+  .demo-link{display:block;text-decoration:none;border-radius:var(--radius);overflow:hidden;border:1px solid #e5eaf0;background:var(--card);box-shadow:0 4px 14px rgba(17,24,39,.05);transition:transform .15s}
+  .demo-link:hover{transform:translateY(-3px)}
+  .demo-thumb{aspect-ratio:16/9;display:grid;place-items:center;font-size:3rem;color:#fff}
+  .t-resto{background:linear-gradient(150deg,#3d1f14,#8a3324 60%,#c9703f)}
+  .t-artisan{background:linear-gradient(150deg,#122f52,#1d4e89 60%,#7fb0e0)}
+  .t-salon{background:linear-gradient(150deg,#4a2b41,#7a4a6b 60%,#c79ab5)}
+  .demo-link .cap{padding:16px 18px;color:var(--ink)}
+  .demo-link .cap b{display:block}
+  .demo-link .cap span{color:var(--muted);font-size:.92rem}
+  .price-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+  .price{background:var(--card);border:1px solid #e5eaf0;border-radius:var(--radius);padding:30px}
+  .price .amount{font-size:2rem;font-weight:800;color:var(--accent);margin:6px 0 2px}
+  .price ul{list-style:none;margin-top:14px}
+  .price li{padding:7px 0;border-bottom:1px dashed #e2e8f0;color:var(--muted);font-size:.96rem}
+  .price li::before{content:"✓ ";color:var(--accent);font-weight:700}
+  .faq details{background:var(--card);border:1px solid #e5eaf0;border-radius:12px;padding:16px 20px;margin-bottom:12px}
+  .faq summary{font-weight:600;cursor:pointer}
+  .faq p{color:var(--muted);margin-top:10px;font-size:.97rem}
+  .contact{background:var(--ink);color:#eef2f7;border-radius:var(--radius);text-align:center;padding:48px 30px}
+  .contact h2{color:#fff}
+  .contact a{color:#8fd8cf}
+  .contact .big{font-size:1.35rem;font-weight:700;text-decoration:none}
+  footer{padding:36px 0;color:var(--muted);font-size:.9rem;text-align:center}
+  @media(max-width:700px){nav ul{display:none}.btn-ghost{margin-left:0;margin-top:10px}}
+</style>
+</head>
+<body>
+
+<header><div class="nav">
+  <a class="logo" href="#">Atelier <span>Numera</span></a>
+  <nav><ul>
+    <li><a href="#portfolio">Réalisations</a></li>
+    <li><a href="#offres">Offres</a></li>
+    <li><a href="#faq">Questions</a></li>
+    <li><a class="cta" href="#contact">Nous écrire</a></li>
+  </ul></nav>
+</div></header>
+
+<div class="hero">
+  <h1>Votre site vitrine, <em>en ligne dans 48 heures.</em></h1>
+  <p>Restaurants, artisans, commerces : un site moderne, rapide et conforme, à prix fixe annoncé d'avance — sans abonnement, et tout vous appartient.</p>
+  <div>
+    <a class="btn btn-primary" href="#portfolio">Voir des exemples</a>
+    <a class="btn btn-ghost" href="#offres">Voir les prix</a>
+  </div>
+</div>
+
+<div class="strip"><div class="wrap">
+  <span>⚡ Livraison en 48–72h</span><span>💶 Prix fixe, zéro abonnement</span><span>📱 Impeccable sur mobile</span><span>🔍 Optimisé Google</span>
+</div></div>
+
+<section id="portfolio"><div class="wrap">
+  <h2>Réalisations de démonstration</h2>
+  <p class="sub">Trois exemples réels et cliquables (établissements fictifs) — le niveau de finition que vous recevez.</p>
+  <div class="cards">
+    <a class="demo-link" href="demo-restaurant/"><div class="demo-thumb t-resto" aria-hidden="true">🌿</div><div class="cap"><b>Le Figuier — restaurant</b><span>Carte, menu du midi, réservation</span></div></a>
+    <a class="demo-link" href="demo-artisan/"><div class="demo-thumb t-artisan" aria-hidden="true">🔧</div><div class="cap"><b>Plomberie Martel — artisan</b><span>Services, devis, appel direct</span></div></a>
+    <a class="demo-link" href="demo-salon/"><div class="demo-thumb t-salon" aria-hidden="true">✂️</div><div class="cap"><b>Salon Élise — coiffure</b><span>Prestations, prix, rendez-vous</span></div></a>
+  </div>
+</div></section>
+
+<section id="offres"><div class="wrap">
+  <h2>Offres & prix</h2>
+  <p class="sub">Annoncés d'avance, tenus ensuite. Facture conforme fournie.</p>
+  <div class="price-cards">
+    <div class="price"><b>Site vitrine une page</b><div class="amount">290 €</div><span style="color:var(--muted)">une fois — pas d'abonnement</span>
+      <ul><li>En ligne sous 48h sur votre domaine</li><li>Textes rédigés avec vous</li><li>Mobile, vitesse & bases SEO soignées</li><li>Une série de corrections incluse</li><li>Tous les fichiers vous appartiennent</li></ul></div>
+    <div class="price"><b>Site complet (jusqu'à 4 pages)</b><div class="amount">490 €</div><span style="color:var(--muted)">une fois — pas d'abonnement</span>
+      <ul><li>Tout le contenu de l'offre 290 €</li><li>Pages supplémentaires (carte, équipe, galerie…)</li><li>Formulaire de contact & plan d'accès</li><li>Statistiques de visite installées</li></ul></div>
+    <div class="price"><b>Tranquillité</b><div class="amount">29 €<span style="font-size:1rem">/mois</span></div><span style="color:var(--muted)">optionnel, sans engagement</span>
+      <ul><li>Vos modifications sous 48h (usage raisonnable)</li><li>Surveillance et mises à jour</li><li>Petites évolutions au fil de l'eau</li><li>Arrêt possible à tout moment</li></ul></div>
+  </div>
+</div></section>
+
+<section id="faq"><div class="wrap faq">
+  <h2>Questions fréquentes</h2>
+  <p class="sub">Les vraies réponses, sans jargon.</p>
+  <details><summary>Comment tenez-vous des délais de 48h ?</summary><p>Notre atelier s'appuie sur une chaîne de production assistée par intelligence artificielle, et chaque livraison est vérifiée et signée par un humain responsable. Vous obtenez la vitesse de la machine avec la garantie d'une personne qui répond de son travail.</p></details>
+  <details><summary>Y a-t-il des frais cachés ou un abonnement obligatoire ?</summary><p>Non. Le prix annoncé est le prix facturé, une fois. L'hébergement de départ est inclus ; si vous avez déjà un nom de domaine, nous le connectons. La formule à 29 €/mois est strictement optionnelle et résiliable à tout moment.</p></details>
+  <details><summary>À qui appartient le site ensuite ?</summary><p>À vous, intégralement : fichiers, textes, images, accès. Vous pouvez partir chez n'importe quel prestataire du jour au lendemain — c'est votre bien.</p></details>
+  <details><summary>Et si le résultat ne me plaît pas ?</summary><p>Une série complète de corrections est incluse. Nous travaillons jusqu'à ce que la page vous ressemble — c'est l'intérêt d'un atelier à taille humaine.</p></details>
+</div></section>
+
+<section id="contact"><div class="wrap contact">
+  <h2>Parlons de votre site</h2>
+  <p>Décrivez votre activité en deux lignes — réponse sous 24h ouvrées.</p>
+  <p style="margin-top:14px"><a class="big" href="mailto:atelier.numera@gmail.com">atelier.numera@gmail.com</a></p>
+</div></section>
+
+<footer><div class="wrap">© 2026 Atelier Numera — micro-entreprise enregistrée en France · TVA non applicable, art. 293 B du CGI.</div></footer>
+
+</body>
+</html>

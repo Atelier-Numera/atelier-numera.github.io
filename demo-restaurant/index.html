@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le Figuier — Cuisine de saison à Angers</title>
+<meta name="description" content="Le Figuier, restaurant de cuisine de saison à Angers. Produits locaux, carte courte, terrasse ombragée. Réservation en ligne et par téléphone.">
+<style>
+  :root{--accent:#8a3324;--accent2:#b5522f;--ink:#221d1a;--paper:#faf6f1;--muted:#6f6259;--card:#fff;--radius:16px;--max:1060px}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font:16px/1.65 Georgia,'Times New Roman',serif;color:var(--ink);background:var(--paper)}
+  .sans{font-family:"Segoe UI",system-ui,sans-serif}
+  a{color:var(--accent)}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+  header{position:sticky;top:0;z-index:10;background:rgba(250,246,241,.94);backdrop-filter:blur(8px);border-bottom:1px solid #eadfd2}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;max-width:var(--max);margin:0 auto}
+  .logo{font-size:1.3rem;letter-spacing:.06em;color:var(--ink);text-decoration:none}
+  .logo b{color:var(--accent)}
+  nav ul{display:flex;gap:22px;list-style:none}
+  nav a{text-decoration:none;color:var(--ink);font-weight:500}
+  nav a:hover{color:var(--accent)}
+  .cta{background:var(--accent);color:#fff !important;padding:9px 20px;border-radius:999px}
+  .hero{position:relative;display:grid;place-items:center;text-align:center;min-height:72vh;padding:80px 20px;color:#fff;
+    background:linear-gradient(160deg,#3d1f14 0%,#8a3324 55%,#c9703f 100%)}
+  .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(1200px 400px at 50% 115%,rgba(250,246,241,.25),transparent 60%)}
+  .hero>div{position:relative;z-index:1;max-width:640px}
+  .hero .fig{font-size:4rem;line-height:1}
+  .hero h1{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:400;letter-spacing:.04em;margin:14px 0 10px}
+  .hero p{font-size:1.12rem;opacity:.92}
+  .hero .btns{margin-top:30px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-block;text-decoration:none;font-weight:600;padding:13px 28px;border-radius:999px}
+  .btn-light{background:#fff;color:var(--accent)}
+  .btn-line{border:2px solid #fff;color:#fff}
+  section{padding:70px 0}
+  h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:400;margin-bottom:10px}
+  .sub{color:var(--muted);margin-bottom:36px;font-style:italic}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+  .card{background:var(--card);border:1px solid #efe4d6;border-radius:var(--radius);padding:28px;box-shadow:0 6px 18px rgba(34,29,26,.06)}
+  .card .pict{font-size:2rem;margin-bottom:12px}
+  .card h3{font-size:1.15rem;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:.98rem}
+  .menu-line{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px dashed #dccbb8}
+  .menu-line b{font-weight:600}
+  .menu-line span{color:var(--muted);font-size:.95rem}
+  .prix{color:var(--accent);font-weight:700;white-space:nowrap}
+  .bandeau{background:var(--ink);color:#f6efe7;text-align:center;padding:40px 20px}
+  .bandeau .sans{font-size:1.05rem;opacity:.9}
+  .infos{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+  footer{padding:36px 0;color:var(--muted);font-size:.9rem;text-align:center}
+  .demo-tag{background:#fff8e6;border-top:1px solid #e8d9a0;color:#5f5426;text-align:center;padding:10px 16px;font-size:.85rem}
+  @media(max-width:700px){nav ul{display:none}}
+</style>
+</head>
+<body>
+
+<header><div class="nav">
+  <a class="logo" href="#">Le <b>Figuier</b></a>
+  <nav class="sans"><ul>
+    <li><a href="#carte">La carte</a></li>
+    <li><a href="#maison">La maison</a></li>
+    <li><a href="#infos">Infos</a></li>
+    <li><a class="cta" href="#reserver">Réserver</a></li>
+  </ul></nav>
+</div></header>
+
+<div class="hero"><div>
+  <div class="fig" aria-hidden="true">🌿</div>
+  <h1>Cuisine de saison, cœur d'Angers</h1>
+  <p>Carte courte, produits des maraîchers d'à côté, terrasse ombragée sous le figuier. Midi & soir, du mardi au samedi.</p>
+  <div class="btns sans">
+    <a class="btn btn-light" href="#reserver">Réserver une table</a>
+    <a class="btn btn-line" href="#carte">Voir la carte</a>
+  </div>
+</div></div>
+
+<section id="carte"><div class="wrap">
+  <h2>La carte de la semaine</h2>
+  <p class="sub">Elle change avec le marché — voici l'esprit.</p>
+  <div class="cards">
+    <div class="card">
+      <div class="pict" aria-hidden="true">🥕</div><h3>Entrées</h3>
+      <div class="menu-line"><div><b>Velouté de carottes fanes</b><br><span>noisettes torréfiées, huile de livèche</span></div><div class="prix">9 €</div></div>
+      <div class="menu-line"><div><b>Œuf parfait</b><br><span>champignons d'Anjou, lard paysan</span></div><div class="prix">11 €</div></div>
+    </div>
+    <div class="card">
+      <div class="pict" aria-hidden="true">🍂</div><h3>Plats</h3>
+      <div class="menu-line"><div><b>Volaille fermière rôtie</b><br><span>jus corsé, légumes du moment</span></div><div class="prix">21 €</div></div>
+      <div class="menu-line"><div><b>Lieu jaune de ligne</b><br><span>beurre blanc au vin de Savennières</span></div><div class="prix">23 €</div></div>
+    </div>
+    <div class="card">
+      <div class="pict" aria-hidden="true">🍐</div><h3>Desserts</h3>
+      <div class="menu-line"><div><b>Poire pochée au Layon</b><br><span>crème crue, tuile sarrasin</span></div><div class="prix">9 €</div></div>
+      <div class="menu-line"><div><b>Chocolat-figue</b><br><span>notre dessert signature</span></div><div class="prix">10 €</div></div>
+    </div>
+  </div>
+</div></section>
+
+<div class="bandeau"><div class="wrap">
+  <p class="sans">« Menu du marché » le midi en semaine — entrée + plat + café gourmand, <b>24 €</b>.</p>
+</div></div>
+
+<section id="maison"><div class="wrap">
+  <h2>La maison</h2>
+  <p class="sub" style="max-width:65ch">Une salle de pierre et de bois, trente couverts, une terrasse sous le figuier centenaire. Nous cuisinons ce que les fermes voisines nous apportent le matin — rien de plus, rien de moins.</p>
+</div></section>
+
+<section id="infos"><div class="wrap">
+  <h2>Infos pratiques</h2>
+  <div class="infos sans">
+    <div class="card"><b>Horaires</b><p>Mar–Sam · 12h–14h / 19h30–22h<br>Fermé dimanche & lundi</p></div>
+    <div class="card"><b>Adresse</b><p>12 rue des Tonneliers<br>49100 Angers</p></div>
+    <div class="card" id="reserver"><b>Réservation</b><p><a href="tel:+33200000000">02 00 00 00 00</a><br><a href="mailto:contact@lefiguier-demo.fr">contact@lefiguier-demo.fr</a></p></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">© 2026 Le Figuier, Angers — site fictif.</div></footer>
+<div class="demo-tag sans">Site de démonstration (établissement fictif) — réalisé par <b>Atelier Numera</b> · <a href="../">voir le portfolio</a></div>
+
+</body>
+</html>
