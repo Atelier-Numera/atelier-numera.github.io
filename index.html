@@ -114,6 +114,14 @@
   .carte li{padding:8px 0;border-bottom:1px dashed #e4ded2;color:var(--gris);font-size:.94rem}
   .carte li::before{content:"— ";color:var(--vert)}
   .carte .btn{margin-top:20px;text-align:center}
+  /* offre veille — volontairement discrète, ce n'est pas une version au rabais de l'entretien */
+  .veille{margin-top:26px;background:#fff;border:1px solid #ddd6c9;border-left:4px solid var(--vert);padding:26px 28px;display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center}
+  .veille h3{font-size:1.02rem;margin-bottom:6px}
+  .veille p{color:var(--gris);font-size:.94rem;max-width:70ch}
+  .veille .tarif{text-align:right;white-space:nowrap}
+  .veille .tarif b{display:block;font-size:1.6rem;font-weight:800;color:var(--vert);letter-spacing:-.02em}
+  .veille .tarif span{font-size:.82rem;color:var(--gris)}
+  @media(max-width:700px){.veille{grid-template-columns:1fr;gap:16px}.veille .tarif{text-align:left}}
 
   /* faq */
   .faq details{background:#fff;border:1px solid var(--sable-2);padding:18px 22px;margin-bottom:12px}
@@ -273,6 +281,19 @@
         <li>Arrêt possible à tout moment</li>
       </ul>
       <a class="btn btn-s" href="mailto:atelier.numera@gmail.com?subject=Formule%20entretien%2029%20EUR%20par%20mois">En savoir plus</a>
+    </div>
+  </div>
+
+  <div class="veille">
+    <div>
+      <h3>Pas envie d'un abonnement&nbsp;? Prenez au moins la Veille.</h3>
+      <p>Chaque mois, nous contrôlons automatiquement que votre site est bien en ligne, que votre certificat de sécurité n'a pas expiré, que votre domaine est correctement configuré pour recevoir les emails, et que la page reste rapide. Si quelque chose cloche, vous recevez un message qui vous dit quoi faire — en français, sans jargon. Sans modification de contenu : ça, c'est la formule Entretien.</p>
+      <p style="margin-top:8px;font-size:.88rem"><b>Pourquoi ça compte&nbsp;:</b> nous avons trouvé un garage dont l'adresse email rejetait tous les messages de ses clients. Personne ne l'avait prévenu. Un site tombe, un certificat expire, une boîte mail se casse — et vous ne l'apprenez que par le client qui n'a pas pu vous joindre.</p>
+    </div>
+    <div class="tarif">
+      <b>36 €<span style="font-size:1rem">/an</span></b>
+      <span>soit 3 €/mois · réglés en une fois</span><br>
+      <a class="btn btn-s" style="margin-top:14px" href="mailto:atelier.numera@gmail.com?subject=Formule%20Veille%2036%20EUR%20par%20an">Ajouter la Veille</a>
     </div>
   </div>
 </div></section>
