@@ -4,115 +4,204 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Garage SB-Car — Entretien & réparation auto à Trélazé (Angers)</title>
-<meta name="description" content="Garage SB-Car à Trélazé : révision, réparation toutes marques avec garantie constructeur conservée, véhicule de prêt gratuit livré chez vous, suivi des réparations en temps réel. Devis gratuit : 09 54 01 89 04.">
+<title>Garage SB-Car — Entretien et réparation auto à Trélazé, près d'Angers</title>
+<meta name="description" content="Garage SB-Car à Trélazé : entretien et réparation toutes marques, garantie constructeur conservée, véhicule de prêt gratuit livré chez vous et suivi de la réparation en temps réel. Devis gratuit : 09 54 01 89 04.">
 <style>
-  :root{--accent:#e94615;--accent2:#ec6238;--blue:#2c81ba;--ink:#1c1917;--paper:#f8f7f6;--muted:#655e59;--card:#fff;--radius:14px;--max:1080px}
+  :root{
+    --orange:#e94615; --orange-clair:#ff7043; --noir:#141414; --noir-2:#1f1f1f;
+    --acier:#8a8f94; --gris-clair:#f2f3f4; --blanc:#fff;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+    --cond:var(--sans);
+    --max:1160px;
+  }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{font:16px/1.65 "Segoe UI",system-ui,sans-serif;color:var(--ink);background:var(--paper)}
-  a{color:var(--accent)}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
-  header{position:sticky;top:0;z-index:10;background:rgba(248,247,246,.94);backdrop-filter:blur(8px);border-bottom:1px solid #eae6e3}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;max-width:var(--max);margin:0 auto}
-  .logo{font-weight:800;font-size:1.18rem;color:var(--ink);text-decoration:none}
-  .logo span{color:var(--accent)}
-  nav ul{display:flex;gap:22px;list-style:none}
-  nav a{text-decoration:none;color:var(--ink);font-weight:500}
-  .cta{background:var(--accent);color:#fff !important;padding:9px 18px;border-radius:999px;font-weight:600}
-  .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:66px 20px;max-width:var(--max);margin:0 auto}
-  .hero h1{font-size:clamp(1.9rem,4.5vw,2.8rem);line-height:1.15;font-weight:800}
-  .hero h1 em{color:var(--accent);font-style:normal}
-  .hero p{margin:18px 0 26px;color:var(--muted);font-size:1.07rem}
-  .btn{display:inline-block;text-decoration:none;font-weight:700;padding:13px 26px;border-radius:999px}
-  .btn-primary{background:var(--accent);color:#fff}
-  .btn-ghost{border:2px solid var(--ink);color:var(--ink);margin-left:10px}
-  .hero-art{border-radius:var(--radius);aspect-ratio:4/3;background:linear-gradient(135deg,#701d05 0%,#e94615 60%,#f59b7c 100%);position:relative;box-shadow:0 18px 40px rgba(28,25,23,.18);display:grid;place-items:center}
-  .hero-art::before{content:"🔧";font-size:5.5rem;filter:drop-shadow(0 8px 18px rgba(0,0,0,.35))}
-  .strip{background:var(--ink);color:#f5f1ee;padding:14px 0}
-  .strip .wrap{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;font-size:.95rem}
-  section{padding:62px 0}
-  h2{font-size:clamp(1.5rem,3vw,2.1rem);margin-bottom:8px}
-  .sub{color:var(--muted);margin-bottom:32px}
-  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
-  .card{background:var(--card);border:1px solid #eae4e0;border-radius:var(--radius);padding:24px;box-shadow:0 4px 14px rgba(28,25,23,.05)}
-  .card .pict{font-size:1.7rem;margin-bottom:10px}
-  .card h3{margin-bottom:8px;font-size:1.07rem}
-  .card p{color:var(--muted);font-size:.96rem}
-  .usp{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
-  .usp .card{border-top:4px solid var(--accent)}
-  .contact{background:var(--ink);color:#f5f1ee;border-radius:var(--radius)}
-  .contact .inner{display:grid;grid-template-columns:1fr 1fr;gap:36px;padding:44px}
-  .contact h2{color:#fff}
-  .contact a{color:#f5a98d}
-  .contact .big{font-size:1.6rem;font-weight:800;text-decoration:none;display:inline-block;margin:10px 0}
-  footer{padding:34px 0 96px;color:var(--muted);font-size:.9rem;text-align:center}
-  .demo-tag{position:fixed;bottom:0;left:0;right:0;background:#fff8e6;border-top:1px solid #e8d9a0;color:#5f5426;text-align:center;padding:10px 16px;font-size:.85rem;z-index:50}
-  @media(max-width:820px){.hero{grid-template-columns:1fr;padding-top:40px}nav ul{display:none}.contact .inner{grid-template-columns:1fr;padding:30px}}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+  body{font-family:var(--sans);font-size:16.5px;line-height:1.7;color:var(--noir);background:var(--blanc)}
+  img{display:block;max-width:100%}
+  a:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 26px}
+  .eyebrow{font-size:.7rem;letter-spacing:.32em;text-transform:uppercase;font-weight:700;color:var(--orange)}
+
+  /* header */
+  .top{background:#fff;color:var(--noir);position:sticky;top:0;z-index:20;border-bottom:1px solid #e6e7e8}
+  .top-in{max-width:var(--max);margin:0 auto;padding:14px 26px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .top img{height:26px;width:auto}
+  .top nav{display:flex;align-items:center;gap:26px;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+  .top nav a{color:var(--noir);text-decoration:none}
+  .top nav a:hover{color:var(--orange)}
+  .top .call{background:var(--orange);color:#fff!important;padding:12px 20px;letter-spacing:.06em}
+  .top .call:hover{background:var(--noir)}
+
+  /* hero */
+  .hero{position:relative;background:var(--noir);color:#fff;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;background:url("img/atelier1.jpg") 70% center/cover;opacity:.6}
+  .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(20,20,20,.96) 26%,rgba(20,20,20,.45) 78%,rgba(20,20,20,.25) 100%)}
+  .hero-in{position:relative;max-width:var(--max);margin:0 auto;padding:96px 26px 84px}
+  .hero h1{font-family:var(--cond);font-size:clamp(2.1rem,5vw,3.7rem);line-height:1.02;text-transform:uppercase;letter-spacing:-.018em;max-width:16ch;font-weight:800}
+  .hero h1 em{font-style:normal;color:var(--orange)}
+  .hero p{margin-top:22px;max-width:48ch;color:rgba(255,255,255,.82);font-size:1.06rem}
+  .hero .eyebrow{margin-bottom:20px}
+  .hero-actions{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-block;text-decoration:none;font-size:.79rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;padding:16px 28px}
+  .btn-orange{background:var(--orange);color:#fff}
+  .btn-orange:hover{background:var(--orange-clair)}
+  .btn-ligne{border:1px solid rgba(255,255,255,.5);color:#fff}
+  .btn-ligne:hover{border-color:var(--orange);color:var(--orange-clair)}
+
+  /* SIGNATURE : le suivi en temps réel */
+  .suivi{background:var(--orange);color:#fff}
+  .suivi .wrap{padding:52px 26px}
+  .suivi h2{font-family:var(--cond);text-transform:uppercase;font-size:clamp(1.5rem,3.4vw,2.2rem);font-weight:400;letter-spacing:.02em}
+  .suivi p.intro{max-width:56ch;margin-top:6px;color:rgba(255,255,255,.92)}
+  .etapes{margin-top:34px;display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  .etape{position:relative;padding:0 18px 0 0}
+  .etape .ligne{display:flex;align-items:center;gap:0;margin-bottom:14px}
+  .etape .dot{width:15px;height:15px;border-radius:50%;background:#fff;flex:none}
+  .etape .barre{height:2px;background:rgba(255,255,255,.55);flex:1}
+  .etape:last-child .barre{background:transparent}
+  .etape b{display:block;font-size:.98rem;letter-spacing:.02em}
+  .etape span{font-size:.88rem;color:rgba(255,255,255,.85)}
+
+  /* services */
+  section{padding:92px 0}
+  .head{max-width:62ch;margin-bottom:44px}
+  .head h2{font-family:var(--cond);text-transform:uppercase;font-size:clamp(1.9rem,4vw,2.9rem);font-weight:400;line-height:1.02;margin:12px 0 12px;letter-spacing:.01em}
+  .head p{color:var(--acier)}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--gris-clair);border:1px solid var(--gris-clair)}
+  .cell{background:#fff;padding:32px 28px}
+  .cell h3{font-size:1.02rem;font-weight:700;margin-bottom:9px}
+  .cell p{color:var(--acier);font-size:.95rem}
+  .cell .tag{display:inline-block;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--orange);margin-bottom:12px}
+
+  /* prêt gratuit */
+  .pret{background:var(--noir);color:#fff}
+  .pret .in{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .pret h2{font-family:var(--cond);text-transform:uppercase;font-size:clamp(1.9rem,4vw,3rem);font-weight:400;line-height:1.02;margin-bottom:16px}
+  .pret h2 em{font-style:normal;color:var(--orange)}
+  .pret p{color:rgba(255,255,255,.78)}
+  .pret ul{list-style:none;margin-top:22px}
+  .pret li{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.14);display:flex;gap:14px;align-items:baseline}
+  .pret li::before{content:"";width:8px;height:8px;background:var(--orange);flex:none;transform:translateY(-1px)}
+  .pret figure{margin:0;aspect-ratio:4/3;overflow:hidden}
+  .pret img{width:100%;height:100%;object-fit:cover}
+
+  /* marques */
+  .marques{background:var(--gris-clair);padding:44px 0}
+  .marques .wrap{display:flex;flex-wrap:wrap;gap:14px 34px;align-items:center;justify-content:center}
+  .marques span{font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:.9rem;color:var(--acier)}
+
+  /* contact */
+  .contact .in{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+  .contact .box{border:2px solid var(--noir);padding:34px}
+  .contact .tel{font-family:var(--cond);font-size:2.6rem;color:var(--noir);text-decoration:none;display:block;letter-spacing:.01em}
+  .contact a.mail{color:var(--orange)}
+  .contact dl{margin-top:20px}
+  .contact dt{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--acier);font-weight:700;margin-top:14px}
+
+  footer{background:var(--noir-2);color:rgba(255,255,255,.55);font-size:.82rem;padding:26px 0 84px;text-align:center}
+  .demo-tag{position:fixed;bottom:0;left:0;right:0;background:#fff8e6;border-top:1px solid #e8d9a0;color:#5f5426;text-align:center;padding:10px 16px;font-size:.82rem;z-index:60}
+  .demo-tag a{color:#5f5426}
+
+  @media(max-width:900px){
+    .etapes{grid-template-columns:1fr 1fr;gap:26px 0}
+    .grid{grid-template-columns:1fr}
+    .pret .in,.contact .in{grid-template-columns:1fr;gap:32px}
+    .top nav a:not(.call){display:none}
+  }
 </style>
 </head>
 <body>
 
-<header><div class="nav">
-  <a class="logo" href="#">Garage <span>SB-Car</span></a>
-  <nav><ul>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#concept">Le concept</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a class="cta" href="tel:0954018904">09 54 01 89 04</a></li>
-  </ul></nav>
-</div></header>
+<header class="top">
+  <div class="top-in">
+    <img src="img/logo.png" alt="Garage SB-Car, Trélazé">
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#suivi">Suivi en temps réel</a>
+      <a href="#contact">Contact</a>
+      <a class="call" href="tel:0954018904">09 54 01 89 04</a>
+    </nav>
+  </div>
+</header>
 
 <section class="hero">
-  <div>
-    <h1>Votre voiture réparée, <em>sans vous arrêter de rouler.</em></h1>
-    <p>Entretien et réparation toutes marques à Trélazé, près d'Angers — garantie constructeur conservée, véhicule de prêt gratuit livré à l'adresse de votre choix, et suivi de votre réparation en temps réel.</p>
-    <div>
-      <a class="btn btn-primary" href="tel:0954018904">Devis gratuit</a>
-      <a class="btn btn-ghost" href="#services">Voir les services</a>
+  <div class="hero-bg" role="presentation"></div>
+  <div class="hero-in">
+    <p class="eyebrow">Garage indépendant · Trélazé, près d'Angers</p>
+    <h1>Votre voiture au garage, <em>vous sur la route.</em></h1>
+    <p>Entretien et réparation toutes marques, garantie constructeur conservée — avec un véhicule de prêt gratuit livré à l'adresse de votre choix pendant les travaux.</p>
+    <div class="hero-actions">
+      <a class="btn btn-orange" href="tel:0954018904">Devis gratuit</a>
+      <a class="btn btn-ligne" href="#services">Voir les prestations</a>
     </div>
   </div>
-  <figure style="margin:0;border-radius:var(--radius);overflow:hidden;box-shadow:0 18px 40px rgba(28,25,23,.18);aspect-ratio:4/3"><img src="img/atelier2.jpg" alt="Mécanicien SB-Car au travail sur un véhicule" style="width:100%;height:100%;object-fit:cover;display:block"></figure>
 </section>
 
-<div class="strip"><div class="wrap">
-  <span>★ Toutes marques</span><span>Garantie constructeur conservée</span><span>Véhicule de prêt gratuit</span><span>Devis & rappel gratuits</span>
-</div></div>
+<section class="suivi" id="suivi"><div class="wrap">
+  <h2>Suivez votre réparation, étape par étape</h2>
+  <p class="intro">Pas d'appel pour savoir où ça en est : votre espace client affiche l'avancement réel de l'intervention, du devis à la restitution.</p>
+  <div class="etapes">
+    <div class="etape"><div class="ligne"><span class="dot"></span><span class="barre"></span></div><b>Devis validé</b><span>Prix ferme avant de commencer</span></div>
+    <div class="etape"><div class="ligne"><span class="dot"></span><span class="barre"></span></div><b>Pièces commandées</b><span>Neuves ou d'occasion garanties</span></div>
+    <div class="etape"><div class="ligne"><span class="dot"></span><span class="barre"></span></div><b>Au travail</b><span>Intervention en atelier</span></div>
+    <div class="etape"><div class="ligne"><span class="dot"></span><span class="barre"></span></div><b>Prête à rouler</b><span>Vous êtes prévenu, on échange les véhicules</span></div>
+  </div>
+</div></section>
 
 <section id="services"><div class="wrap">
-  <h2>Services</h2>
-  <p class="sub">Pièces agréées grandes marques : Bosch, TRW, Monroe, Delphi, Valeo.</p>
-  <div class="cards">
-    <div class="card"><div class="pict" aria-hidden="true">🛢️</div><h3>Révision & entretien</h3><p>Vidange, freinage, embrayage, distribution, batterie, climatisation, amortisseurs, échappement.</p></div>
-    <div class="card"><div class="pict" aria-hidden="true">⚙️</div><h3>Réparation toutes marques</h3><p>Pièces neuves ou d'occasion garanties, au choix — pour une facture adaptée à votre budget.</p></div>
-    <div class="card"><div class="pict" aria-hidden="true">💨</div><h3>Décalaminage moteur</h3><p>Réduisez la pollution et retrouvez les performances d'origine de votre moteur.</p></div>
-    <div class="card"><div class="pict" aria-hidden="true">🛞</div><h3>Montage pneus internet</h3><p>Achetés sur Allopneus, Centrale du Pneu ou 1001pneus ? On vous les monte.</p></div>
-    <div class="card"><div class="pict" aria-hidden="true">🚗</div><h3>Occasions révisées</h3><p>Véhicules d'occasion toutes marques, révisés et garantis par l'atelier.</p></div>
-    <div class="card"><div class="pict" aria-hidden="true">📱</div><h3>Suivi en temps réel</h3><p>Votre espace client vous montre l'avancement de la réparation, étape par étape.</p></div>
+  <div class="head">
+    <p class="eyebrow">Prestations</p>
+    <h2>Tout ce qu'une voiture demande, au même endroit</h2>
+    <p>Pièces agréées grandes marques, garantie constructeur préservée, et le choix entre pièces neuves ou d'occasion garanties selon votre budget.</p>
+  </div>
+  <div class="grid">
+    <div class="cell"><span class="tag">Entretien</span><h3>Révision complète</h3><p>Vidange, freinage, embrayage, distribution, batterie, amortisseurs, échappement.</p></div>
+    <div class="cell"><span class="tag">Réparation</span><h3>Mécanique toutes marques</h3><p>Diagnostic, réparation et remplacement — avec pièces Bosch, TRW, Monroe, Delphi, Valeo.</p></div>
+    <div class="cell"><span class="tag">Climatisation</span><h3>Recharge & entretien clim</h3><p>Contrôle du circuit, recharge, assainissement — avant les premières chaleurs.</p></div>
+    <div class="cell"><span class="tag">Moteur</span><h3>Décalaminage</h3><p>Moins de pollution, un moteur qui retrouve son fonctionnement d'origine.</p></div>
+    <div class="cell"><span class="tag">Pneumatiques</span><h3>Montage de pneus internet</h3><p>Achetés sur Allopneus, Centrale du Pneu ou 1001pneus ? On les monte et on équilibre.</p></div>
+    <div class="cell"><span class="tag">Occasions</span><h3>Véhicules révisés & garantis</h3><p>Sélection d'occasions toutes marques, préparées par l'atelier.</p></div>
   </div>
 </div></section>
 
-<section id="concept"><div class="wrap">
-  <h2>Le concept SB-Car</h2>
-  <p class="sub" style="max-width:72ch">Un service rapide, des tarifs attractifs grâce au choix pièces neuves ou d'occasion garanties, et zéro immobilisation : pendant la réparation, un véhicule de prêt gratuit vous est livré à l'adresse de votre choix. Notre priorité : votre satisfaction.</p>
-  <div class="usp">
-    <div class="card"><h3>🚙 Prêt gratuit</h3><p>Un véhicule de courtoisie livré chez vous ou au travail, sans frais.</p></div>
-    <div class="card"><h3>🧾 Devis clair</h3><p>Gratuit, détaillé, annoncé avant toute intervention — et rappel gratuit.</p></div>
-    <div class="card"><h3>🛡️ Garantie préservée</h3><p>Pièces agréées : votre garantie constructeur reste valable.</p></div>
-  </div>
-</div></section>
-
-<section id="contact"><div class="wrap contact"><div class="inner">
-  <div><h2>Un devis ? Un rappel ?</h2><p>Lundi–vendredi : 9h–12h et 13h–17h. Décrivez la panne ou l'entretien souhaité, réponse rapide.</p></div>
+<section class="pret"><div class="wrap in">
   <div>
-    <a class="big" href="tel:0954018904">09 54 01 89 04</a><br>
-    <a href="mailto:contact@garage-sbcar.com">contact@garage-sbcar.com</a>
-    <p style="margin-top:14px;font-size:.95rem">85 rue Ferdinand Vest, 49800 Trélazé</p>
+    <p class="eyebrow">Ce qui change tout</p>
+    <h2>Un véhicule de prêt <em>livré chez vous.</em> Gratuitement.</h2>
+    <p>La plupart des garages vous laissent organiser votre semaine autour de la réparation. Nous faisons l'inverse : le véhicule de prêt arrive à l'adresse de votre choix, et repart avec votre voiture.</p>
+    <ul>
+      <li>Livraison à domicile ou au travail, sans frais</li>
+      <li>Devis gratuit, détaillé, annoncé avant toute intervention</li>
+      <li>Garantie constructeur conservée grâce aux pièces agréées</li>
+      <li>Rappel gratuit si vous préférez qu'on vous explique de vive voix</li>
+    </ul>
   </div>
-</div></div></section>
+  <figure><img src="img/b1.jpg" alt="Intervention sur batterie dans l'atelier du Garage SB-Car" loading="lazy"></figure>
+</div></section>
 
-<footer><div class="wrap">© 2026 Garage SB-Car — Trélazé.</div></footer>
-<div class="demo-tag">Démonstration non commandée, créée par <b>Atelier Numera</b> · contenus © Garage SB-Car · page retirée sous 14 jours ou immédiatement sur demande : atelier.numera@gmail.com</div>
+<div class="marques"><div class="wrap">
+  <span>Bosch</span><span>TRW</span><span>Monroe</span><span>Delphi</span><span>Valeo</span>
+</div></div>
+
+<section class="contact" id="contact"><div class="wrap in">
+  <div>
+    <p class="eyebrow">Prendre rendez-vous</p>
+    <h2 style="font-family:var(--cond);text-transform:uppercase;font-size:clamp(1.9rem,4vw,2.9rem);font-weight:400;line-height:1.02;margin:12px 0 14px">Dites-nous ce qui cloche</h2>
+    <p style="color:var(--acier)">Un bruit, un voyant, une révision à faire : appelez ou écrivez, on vous répond avec un prix, pas avec une estimation vague.</p>
+  </div>
+  <div class="box">
+    <a class="tel" href="tel:0954018904">09 54 01 89 04</a>
+    <a class="mail" href="mailto:contact@garage-sbcar.com">contact@garage-sbcar.com</a>
+    <dl>
+      <dt>Adresse</dt><dd>85 rue Ferdinand Vest, 49800 Trélazé</dd>
+      <dt>Horaires</dt><dd>Lundi au vendredi : 9h – 12h et 13h – 17h</dd>
+    </dl>
+  </div>
+</div></section>
+
+<footer><div class="wrap">© 2026 Garage SB-Car — 85 rue Ferdinand Vest, 49800 Trélazé</div></footer>
+<div class="demo-tag">Démonstration non commandée, créée par <b>Atelier Numera</b> · contenus et photos © Garage SB-Car · page retirée sous 14 jours ou immédiatement sur demande : <a href="mailto:atelier.numera@gmail.com">atelier.numera@gmail.com</a></div>
 
 </body>
 </html>
