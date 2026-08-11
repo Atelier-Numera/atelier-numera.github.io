@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>La Ferme — Restaurant traditionnel à Angers, au pied de la cathédrale</title>
+<meta name="description" content="La Ferme, restaurant traditionnel à Angers depuis 1988. Cuisine maison de Bruno et Maria Besnard, 2 place Freppel. Menus 29 € et 35 €, plat du jour 14 €. Réservation : 02 41 87 09 90.">
+<style>
+  :root{
+    --ardoise:#454F59;          /* gris ardoise de la façade, 2 place Freppel */
+    --ardoise-nuit:#262C33;
+    --ardoise-craie:#2E353B;
+    --chene:#A86838;            /* chêne des tables, relevé sur leurs photos */
+    --chene-fonce:#7A4820;
+    --framboise:#E40148;        /* rouge de la crête du coq, relevé dans leur CSS */
+    --framboise-clair:#FF4A72;  /* variante lisible sur fond ardoise */
+    --creme:#F7F2E8;
+    --creme-2:#ECE3D2;
+    --encre:#2B2B2B;
+    --gris:#6E6A63;
+    --craie:#EFEAE0;
+    --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+    --max:1140px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+  body{font-family:var(--serif);font-size:17px;line-height:1.7;color:var(--encre);background:var(--creme);padding-bottom:92px;-webkit-text-size-adjust:100%}
+  img{display:block;max-width:100%;height:auto}
+  a{color:inherit}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--framboise);outline-offset:3px;border-radius:2px}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  .label{font-family:var(--sans);font-size:.7rem;letter-spacing:.32em;text-transform:uppercase;font-weight:600}
+
+  /* ------- plaque « DEPUIS 1988 » : reprise de l'enseigne ovale de la façade ------- */
+  .plaque{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;
+    width:132px;height:96px;border-radius:50%;background:var(--ardoise-nuit);
+    box-shadow:0 0 0 3px var(--creme),0 0 0 5px var(--framboise),0 0 0 8px var(--ardoise-nuit);
+    color:#fff;font-family:var(--sans);flex:none}
+  .plaque b{font-size:.6rem;letter-spacing:.34em;font-weight:600;line-height:1;padding-left:.34em}
+  .plaque span{font-size:1.85rem;letter-spacing:.04em;line-height:1.15;font-weight:400}
+  .plaque--sombre{box-shadow:0 0 0 3px var(--craie),0 0 0 5px var(--framboise),0 0 0 8px transparent}
+  .plaque--sm{width:104px;height:76px}
+  .plaque--sm span{font-size:1.4rem}
+  .plaque--sm b{font-size:.52rem}
+
+  /* ------- bandeau de tête ------- */
+  .infobar{background:var(--ardoise-nuit);color:#D8D3C9;font-family:var(--sans);font-size:.78rem}
+  .infobar .wrap{display:flex;flex-wrap:wrap;gap:8px 26px;justify-content:space-between;padding-top:9px;padding-bottom:9px}
+  .infobar a{text-decoration:none;border-bottom:1px solid rgba(228,1,72,.7);white-space:nowrap}
+  .infobar a:hover{color:#fff;border-bottom-color:#fff}
+
+  header.top{background:var(--creme);border-bottom:1px solid var(--creme-2);position:sticky;top:0;z-index:30}
+  .top-in{max-width:var(--max);margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+  .brand img{width:196px}
+  header nav{display:flex;align-items:center;gap:24px;font-family:var(--sans);font-size:.76rem;letter-spacing:.17em;text-transform:uppercase;font-weight:600}
+  header nav a{text-decoration:none;padding:4px 0;border-bottom:2px solid transparent;color:var(--ardoise)}
+  header nav a:hover{border-bottom-color:var(--framboise);color:var(--encre)}
+  .btn{display:inline-block;text-decoration:none;font-family:var(--sans);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;padding:13px 22px}
+  .btn-fram{background:var(--framboise);color:#fff}
+  .btn-fram:hover{background:#b40039}
+  .btn-ardoise{background:var(--ardoise-nuit);color:var(--craie)}
+  .btn-ardoise:hover{background:#000}
+  .btn-ligne{border:1px solid var(--ardoise);color:var(--ardoise)}
+  .btn-ligne:hover{border-color:var(--framboise);color:var(--framboise)}
+  .btn-craie{border:1px solid rgba(239,234,224,.55);color:var(--craie)}
+  .btn-craie:hover{border-color:var(--framboise-clair);color:#fff}
+
+  /* ------- actualité ------- */
+  .actu{background:var(--framboise);color:#fff;font-family:var(--sans);font-size:.86rem}
+  .actu .wrap{padding-top:11px;padding-bottom:11px;display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
+  .actu strong{letter-spacing:.22em;text-transform:uppercase;font-size:.68rem;border:1px solid rgba(255,255,255,.6);padding:3px 9px;flex:none}
+
+  /* ------- hero ------- */
+  .hero{border-bottom:1px solid var(--creme-2)}
+  .hero-in{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1.02fr .98fr;align-items:stretch}
+  .hero-txt{padding:64px 56px 60px 24px}
+  .hero .label{color:var(--framboise);margin:22px 0 14px}
+  .hero h1{font-size:clamp(2.3rem,4.6vw,3.5rem);line-height:1.08;font-weight:400;letter-spacing:-.015em}
+  .hero h1 em{font-style:italic;color:var(--chene-fonce)}
+  .hero .lede{margin-top:20px;max-width:46ch;color:#4a463f}
+  .hero .actions{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
+  .hero-facts{margin-top:34px;padding-top:22px;border-top:1px solid var(--creme-2);display:flex;flex-wrap:wrap;gap:26px 42px;font-family:var(--sans);font-size:.85rem;color:var(--gris)}
+  .hero-facts b{display:block;font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ardoise);margin-bottom:3px}
+  .hero-facts a{text-decoration:none;border-bottom:1px solid var(--framboise);color:var(--encre)}
+  .hero-img{position:relative;min-height:520px}
+  .hero-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:44% 55%}
+
+  /* ------- bandeau service ------- */
+  .service{background:var(--ardoise-nuit);color:var(--craie)}
+  .service .wrap{padding:26px 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+  .service h3{font-family:var(--sans);font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--framboise-clair);font-weight:600;margin-bottom:6px}
+  .service p{font-size:.98rem;line-height:1.5;color:#DEDAD1}
+  .service a{text-decoration:none;border-bottom:1px solid rgba(255,74,114,.8)}
+
+  /* ------- sections ------- */
+  section{padding:88px 0}
+  .head{display:flex;align-items:baseline;justify-content:space-between;gap:24px;border-bottom:1px solid var(--creme-2);padding-bottom:16px;margin-bottom:44px}
+  .head h2{font-size:clamp(1.8rem,3.2vw,2.5rem);font-weight:400;letter-spacing:-.01em}
+  .head .label{color:var(--chene-fonce);white-space:nowrap}
+
+  /* maison */
+  .maison-in{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+  .maison p+p{margin-top:16px}
+  .maison .pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .maison figure{margin:0}
+  .maison figure img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:50% 32%}
+  .maison figcaption{font-family:var(--sans);font-size:.72rem;color:var(--gris);margin-top:8px;letter-spacing:.04em}
+  .signe{margin-top:28px;display:flex;gap:20px;align-items:center;padding:20px 22px;background:#fff;border-left:4px solid var(--framboise)}
+  .signe q{font-style:italic;display:block}
+  .signe cite{display:block;margin-top:6px;font-family:var(--sans);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gris);font-style:normal}
+
+  /* ardoise du midi */
+  .midi{background:var(--chene-fonce);background-image:linear-gradient(180deg,#7C4A24,#4E2D14);padding:80px 0}
+  .midi-in{display:grid;grid-template-columns:1.25fr .75fr;gap:36px;align-items:stretch}
+  .tableau{background:var(--ardoise-craie);border:10px solid #3A2312;box-shadow:inset 0 0 0 1px rgba(239,234,224,.22);padding:34px 34px 30px;color:var(--craie)}
+  .tableau h2{font-size:clamp(1.6rem,3vw,2.15rem);font-weight:400;letter-spacing:.02em;margin-bottom:4px}
+  .tableau .sub{font-family:var(--sans);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:#B9C2C8;margin-bottom:26px}
+  .ligne{display:flex;align-items:baseline;gap:10px;padding:11px 0;border-bottom:1px dotted rgba(239,234,224,.3)}
+  .ligne:last-of-type{border-bottom:0}
+  .ligne .nom{font-size:1.06rem}
+  .ligne .nom small{display:block;font-size:.84rem;color:#B9C2C8;font-style:italic;margin-top:1px}
+  .ligne .fill{flex:1}
+  .ligne .prix{font-family:var(--sans);font-weight:700;font-size:1.25rem;color:var(--framboise-clair);white-space:nowrap}
+  .tableau .note{margin-top:22px;font-family:var(--sans);font-size:.78rem;color:#B9C2C8;border-top:1px solid rgba(239,234,224,.22);padding-top:14px}
+  .menus-jour{background:var(--creme);padding:32px 30px;display:flex;flex-direction:column;justify-content:center;gap:22px}
+  .menus-jour .label{color:var(--framboise)}
+  .mj{border-bottom:1px solid var(--creme-2);padding-bottom:18px}
+  .mj:last-child{border-bottom:0;padding-bottom:0}
+  .mj .prix{font-family:var(--sans);font-size:2rem;font-weight:700;line-height:1;color:var(--ardoise-nuit)}
+  .mj p{font-size:.96rem;color:var(--gris);margin-top:6px}
+
+  /* carte */
+  .carte{background:var(--creme)}
+  .groupe{margin-bottom:52px;break-inside:avoid}
+  .groupe h3{font-family:var(--sans);font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--framboise);font-weight:700;margin-bottom:4px}
+  .groupe .rule{height:2px;background:var(--ardoise-nuit);width:38px;margin-bottom:20px}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:0 64px}
+  .plat{margin-bottom:20px}
+  .plat .tl{display:flex;align-items:baseline;gap:10px}
+  .plat .nom{font-size:1.03rem;line-height:1.4}
+  .plat .fill{flex:1;border-bottom:1px dotted #BFB6A2;transform:translateY(-5px);min-width:20px}
+  .plat .prix{font-family:var(--sans);font-weight:700;font-size:1rem;white-space:nowrap}
+  .plat small{display:block;font-size:.87rem;color:var(--gris);font-style:italic;margin-top:2px;line-height:1.5;padding-right:52px}
+  .supp{display:inline-block;font-family:var(--sans);font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--framboise);border:1px solid var(--framboise);padding:1px 6px;margin-left:5px;font-style:normal;vertical-align:1px;white-space:nowrap}
+  .formules-band{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--ardoise-nuit);margin-bottom:52px}
+  .formules-band div{padding:24px 26px}
+  .formules-band div+div{border-left:1px solid var(--ardoise-nuit)}
+  .formules-band .prix{font-family:var(--sans);font-size:1.9rem;font-weight:700;line-height:1.1}
+  .formules-band p{font-size:.94rem;color:var(--gris)}
+  .plats-photos{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:8px 0 52px}
+  .plats-photos figure{margin:0}
+  .plats-photos img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+  .plats-photos figcaption{font-family:var(--sans);font-size:.71rem;color:var(--gris);margin-top:7px;line-height:1.4}
+  .mentions{font-family:var(--sans);font-size:.82rem;color:var(--gris);border-top:1px solid var(--creme-2);padding-top:20px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .mentions b{display:block;color:var(--ardoise);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;margin-bottom:4px}
+
+  /* signature */
+  .signature{background:var(--ardoise-nuit);color:var(--craie);padding:84px 0}
+  .sig-in{display:grid;grid-template-columns:132px 1fr;gap:44px;align-items:start}
+  .signature .label{color:var(--framboise-clair);margin-bottom:14px}
+  .signature h2{font-size:clamp(1.9rem,3.8vw,2.9rem);font-weight:400;line-height:1.12;letter-spacing:-.01em}
+  .signature h2 em{font-style:italic;color:var(--framboise-clair)}
+  .signature p{margin-top:20px;max-width:56ch;color:#CFCAC1}
+  .sig-prix{margin-top:26px;display:flex;flex-wrap:wrap;gap:14px 34px;align-items:baseline;font-family:var(--sans)}
+  .sig-prix span{font-size:1.7rem;font-weight:700;color:#fff;margin-right:12px}
+  .sig-prix small{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:#B0AAA0}
+  .sig-avis{margin-top:34px;border-top:1px solid rgba(239,234,224,.2);padding-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:30px}
+  .sig-avis q{display:block;font-style:italic;color:#DEDAD1}
+  .sig-avis cite{display:block;margin-top:8px;font-family:var(--sans);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#8F8981;font-style:normal}
+
+  /* groupes */
+  .groupes-in{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+  .groupes figure{margin:0}
+  .groupes figure img{width:100%;height:auto;aspect-ratio:5/4;object-fit:cover}
+  .groupes figcaption{font-family:var(--sans);font-size:.72rem;color:var(--gris);margin-top:8px}
+  .fiche{border-top:2px solid var(--ardoise-nuit);padding-top:16px;margin-bottom:26px}
+  .fiche h3{font-size:1.3rem;font-weight:400;margin-bottom:8px}
+  .fiche ul{list-style:none;font-family:var(--sans);font-size:.9rem;color:var(--gris)}
+  .fiche li{padding:5px 0 5px 16px;position:relative}
+  .fiche li::before{content:"";position:absolute;left:0;top:14px;width:6px;height:6px;background:var(--framboise)}
+  .fiche a{color:var(--encre);text-decoration:none;border-bottom:1px solid var(--framboise)}
+
+  /* infos */
+  .infos{background:#fff;border-top:1px solid var(--creme-2)}
+  .infos-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:34px}
+  .infos-grid h3{font-family:var(--sans);font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--framboise);margin-bottom:10px;font-weight:700}
+  .infos-grid p{font-size:1rem;line-height:1.6}
+  .infos-grid a{text-decoration:none;border-bottom:1px solid var(--framboise)}
+  .allerg{margin-top:38px;border-top:1px solid var(--creme-2);padding-top:20px;font-family:var(--sans);font-size:.82rem;color:var(--gris);max-width:88ch}
+
+  footer{background:var(--ardoise-nuit);color:#ABA59E;font-family:var(--sans);font-size:.8rem;padding:40px 0 34px}
+  footer .f-in{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center}
+  footer img{width:150px;height:auto}
+  footer a{color:#C9C3BB;text-decoration:none;border-bottom:1px solid rgba(228,1,72,.8)}
+  .abus{margin-top:26px;border-top:1px solid rgba(255,255,255,.12);padding-top:18px;font-size:.74rem;letter-spacing:.06em;color:#ADA7A0}
+
+  .demo-tag{position:fixed;bottom:0;left:0;right:0;background:#fff8e6;border-top:1px solid #e8d9a0;color:#5f5426;text-align:center;padding:10px 16px;font-size:.8rem;font-family:var(--sans);line-height:1.45;z-index:80}
+  .demo-tag a{color:#5f5426}
+
+  @media(max-width:980px){
+    .hero-in{grid-template-columns:1fr}
+    .hero-txt{padding:48px 24px 44px;order:2}
+    .hero-img{min-height:300px;height:44vw;max-height:400px;order:1}
+    .service .wrap{grid-template-columns:1fr 1fr;gap:22px}
+    .maison-in,.groupes-in{grid-template-columns:1fr;gap:36px}
+    .midi-in{grid-template-columns:1fr}
+    .cols{grid-template-columns:1fr;gap:0}
+    .infos-grid{grid-template-columns:1fr 1fr}
+    .plats-photos{grid-template-columns:1fr 1fr}
+    header nav a:not(.nav-tel){display:none}
+  }
+  @media(max-width:640px){
+    body{font-size:16px;padding-bottom:134px}
+    .signe{flex-direction:column;align-items:flex-start;gap:14px}
+    section{padding:60px 0}
+    .head{flex-direction:column;align-items:flex-start;gap:6px}
+    .head .label{white-space:normal}
+    .sig-in{grid-template-columns:1fr;gap:24px}
+    .sig-avis{grid-template-columns:1fr;gap:20px}
+    .service .wrap{grid-template-columns:1fr}
+    .mentions{grid-template-columns:1fr;gap:16px}
+    .formules-band{grid-template-columns:1fr}
+    .formules-band div+div{border-left:0;border-top:1px solid var(--ardoise-nuit)}
+    .infos-grid{grid-template-columns:1fr}
+    .brand img{width:158px}
+    .tableau{padding:24px 20px 22px;border-width:8px}
+    .maison .pair{gap:10px}
+    .hero .actions .btn{flex:1 1 100%;text-align:center}
+  }
+  @media(max-width:400px){
+    .wrap{padding:0 16px}
+    .top-in{padding:12px 16px}
+    .plats-photos{grid-template-columns:1fr 1fr;gap:10px}
+    .plaque{width:112px;height:82px}
+    .plaque span{font-size:1.5rem}
+    .sig-in{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<div class="infobar"><div class="wrap">
+  <span>2 place Freppel, 49100 Angers — au pied de la cathédrale</span>
+  <span>Réservation : <a href="tel:+33241870990">02 41 87 09 90</a> · <a href="mailto:contact@restaurant-laferme.com">contact@restaurant-laferme.com</a></span>
+</div></div>
+
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="#" aria-label="La Ferme Restaurant, Angers — accueil"><img src="img/logo-la-ferme.png" alt="La Ferme Restaurant, Angers" width="506" height="160"></a>
+    <nav>
+      <a href="#maison">La maison</a>
+      <a href="#midi">Le midi</a>
+      <a href="#carte">La carte</a>
+      <a href="#groupes">Groupes</a>
+      <a href="#infos">Infos</a>
+      <a class="btn btn-fram nav-tel" href="tel:+33241870990">02 41 87 09 90</a>
+    </nav>
+  </div>
+</header>
+
+<div class="actu"><div class="wrap">
+  <strong>Actualité</strong>
+  <span>Le restaurant La Ferme sera fermé du 19 juillet au 16 août 2026 inclus. Bonnes vacances à tous !</span>
+</div></div>
+
+<section class="hero" style="padding:0">
+  <div class="hero-in">
+    <div class="hero-txt">
+      <div class="plaque"><b>DEPUIS</b><span>1988</span></div>
+      <p class="label">Restaurant traditionnel · Angers</p>
+      <h1>Une cuisine maison,<br>au pied de la <em>cathédrale.</em></h1>
+      <p class="lede">Maria et Bruno Besnard vous accueillent à La Ferme pour une cuisine « fait maison », généreuse et pleine de saveurs — entre traditions du terroir et inspirations d'aujourd'hui.</p>
+      <div class="actions">
+        <a class="btn btn-fram" href="tel:+33241870990">Réserver au 02 41 87 09 90</a>
+        <a class="btn btn-ligne" href="#carte">Voir la carte</a>
+      </div>
+      <div class="hero-facts">
+        <div><b>Service</b>Du mardi au samedi<br>midi et soir</div>
+        <div><b>Adresse</b>2 place Freppel<br>49100 Angers</div>
+        <div><b>Écrire</b><a href="mailto:contact@restaurant-laferme.com">contact@restaurant-laferme.com</a></div>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="img/facade-la-ferme-angers.jpg" alt="La terrasse couverte du restaurant La Ferme, place Freppel à Angers, avec ses stores rouges et son auvent noir" width="1090" height="670">
+    </div>
+  </div>
+</section>
+
+<div class="service"><div class="wrap">
+  <div><h3>Horaires</h3><p>Du mardi au samedi<br>Midi 12h00 – 14h00<br>Soir 19h00 – 21h00</p></div>
+  <div><h3>Réservation</h3><p><a href="tel:+33241870990">02 41 87 09 90</a><br>Pensez à réserver.</p></div>
+  <div><h3>Le midi en semaine</h3><p>Plat du jour 14 €<br>Menus 18 € et 22 €</p></div>
+  <div><h3>Midi et soir</h3><p>Menu 29 € et menu 35 €<br>Prix nets, taxes comprises</p></div>
+</div></div>
+
+<section class="maison" id="maison"><div class="wrap">
+  <div class="head">
+    <h2>La maison Besnard</h2>
+    <p class="label">Deux salles · une terrasse</p>
+  </div>
+  <div class="maison-in">
+    <div>
+      <p>Le chef, Bruno Besnard, et sa femme, Maria Besnard, vous invitent à découvrir leur cuisine « maison » alliant saveur et authenticité. Une cuisine de terroir qui s'invite à votre table, mariant les nouvelles tendances au respect des traditions.</p>
+      <p>En toute saison, vous apprécierez le cadre de La Ferme : l'hiver, dans son intérieur chaleureux et accueillant ; l'été, sur sa terrasse extérieure au pied de la cathédrale d'Angers. Deux grandes salles, à deux pas du vieux quartier historique et du château.</p>
+      <p>Nos vins sont sélectionnés avec passion et rigueur, en partenariat avec les viticulteurs : vous trouverez tout un échantillon de vins exposés en vinothèque, et une sélection magnum pour vos événements.</p>
+      <div class="signe">
+        <div class="plaque plaque--sm plaque--sombre" style="background:var(--ardoise-nuit)" aria-hidden="true"><b>DEPUIS</b><span>1988</span></div>
+        <div>
+          <q>Excellent ! La déco est sympa, inspirée des métiers de la ferme. La cuisine est top ! Pensez à réserver avant d'y aller !</q>
+          <cite>Peggy Chartier — avis publié sur restaurant-laferme.com</cite>
+        </div>
+      </div>
+    </div>
+    <div class="pair">
+      <figure>
+        <img src="img/salle-collection-ferme.jpg" alt="Table dressée dans une alcôve de la salle, sous l'étagère de coqs et de poules en faïence" loading="lazy" width="800" height="830">
+        <figcaption>La petite salle et sa collection de faïences</figcaption>
+      </figure>
+      <figure>
+        <img src="img/plaque-depuis-1988.jpg" alt="L'enseigne ovale « Depuis 1988 » au coq, fixée sur la façade ardoise du restaurant" loading="lazy" width="667" height="1000">
+        <figcaption>L'enseigne de la façade, place Freppel</figcaption>
+      </figure>
+    </div>
+  </div>
+</div></section>
+
+<section class="midi" id="midi" style="padding-top:80px;padding-bottom:80px"><div class="wrap">
+  <div class="midi-in">
+    <div class="tableau">
+      <h2>L'ardoise du midi</h2>
+      <p class="sub">Tous les midis, du mardi au vendredi — sauf jours fériés</p>
+      <div class="ligne">
+        <span class="nom">Plat du jour<small>annoncé à l'ardoise</small></span>
+        <span class="fill"></span><span class="prix">14 €</span>
+      </div>
+      <div class="ligne">
+        <span class="nom">Menu du jour<small>entrée et plat, ou plat et dessert</small></span>
+        <span class="fill"></span><span class="prix">18 €</span>
+      </div>
+      <div class="ligne">
+        <span class="nom">Menu du jour<small>entrée, plat et dessert</small></span>
+        <span class="fill"></span><span class="prix">22 €</span>
+      </div>
+      <div class="ligne">
+        <span class="nom">Menu enfant<small>jusqu'à 10 ans — steak haché ou filet de poisson et sa garniture, moelleux au chocolat ou deux boules de glace</small></span>
+        <span class="fill"></span><span class="prix">13 €</span>
+      </div>
+      <p class="note">Nos mets sont entièrement réalisés par le Chef et son équipe. Prix nets et taxes comprises.</p>
+    </div>
+    <div class="menus-jour">
+      <p class="label">Midi et soir, tous les jours</p>
+      <div class="mj">
+        <p class="prix">35 €</p>
+        <p>Entrée, plat et dessert, à choisir sur la carte.</p>
+      </div>
+      <div class="mj">
+        <p class="prix">29 €</p>
+        <p>Entrée et plat, ou plat et dessert.</p>
+      </div>
+      <div class="mj">
+        <a class="btn btn-ardoise" href="tel:+33241870990">Réserver une table</a>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section class="carte" id="carte"><div class="wrap">
+  <div class="head">
+    <h2>La carte</h2>
+    <p class="label">Fait maison · prix nets</p>
+  </div>
+
+  <div class="formules-band">
+    <div>
+      <p class="prix">35 €</p>
+      <p>Menu entrée, plat et dessert — certains plats appellent un supplément, indiqué en face du plat.</p>
+    </div>
+    <div>
+      <p class="prix">29 €</p>
+      <p>Menu entrée et plat, ou plat et dessert. Servi tous les jours, midi et soir.</p>
+    </div>
+  </div>
+
+  <div class="groupe">
+    <h3>À partager</h3><div class="rule"></div>
+    <div class="cols">
+      <div>
+        <div class="plat"><p class="tl"><span class="nom">Planche de « La Ferme »</span><span class="fill"></span><span class="prix">19 €</span></p><small>charcuterie et fromages : jambon cru ibérique, andouille, chorizo, coppa, Comté, Curé Nantais, beurre et condiments</small></div>
+        <div class="plat"><p class="tl"><span class="nom">Beignets de morue</span><span class="fill"></span><span class="prix">5 €</span></p><small>4 unités</small></div>
+      </div>
+      <div>
+        <div class="plat"><p class="tl"><span class="nom">Pot de rillettes de porc fait maison</span><span class="fill"></span><span class="prix">6 €</span></p><small>115 g, cornichons et toasts</small></div>
+        <div class="plat"><p class="tl"><span class="nom">Planche mix grill</span><span class="fill"></span><span class="prix">46 €</span></p><small>pour 2 personnes — bœuf, magret de canard, poitrine de porc, filet de poulet croustillant (origine France), sauces barbecue, roquefort et gribiche, frites maison, haricots blancs et salade <span class="supp">Menu +4 €</span></small></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="plats-photos">
+    <figure>
+      <img src="img/planches-a-partager.jpg" alt="Planches de charcuterie, plateau de fromages et grandes salades disposés sur une table en chêne" loading="lazy" width="800" height="1000">
+      <figcaption>Les planches à partager</figcaption>
+    </figure>
+    <figure>
+      <img src="img/salade-landaise.jpg" alt="Salade landaise servie dans une assiette à motif de ferme, avec foie gras, magret fumé et toasts" loading="lazy" width="800" height="1000">
+      <figcaption>Salade landaise, magret fumé maison</figcaption>
+    </figure>
+    <figure>
+      <img src="img/cassoulet-la-ferme.jpg" alt="Cassoulet de La Ferme en cassolette : confit de canard, saucisse artisanale et haricots blancs" loading="lazy" width="1000" height="667">
+      <figcaption>Le cassoulet de « La Ferme », maison</figcaption>
+    </figure>
+    <figure>
+      <img src="img/creme-brulee.jpg" alt="Crème brûlée à la vanille servie en cassolette, cuillère à la main d'une convive" loading="lazy" width="800" height="1000">
+      <figcaption>Crème brûlée à la vanille de Bourbon</figcaption>
+    </figure>
+  </div>
+
+  <div class="groupe">
+    <h3>Grandes salades</h3><div class="rule"></div>
+    <div class="cols">
+      <div>
+        <div class="plat"><p class="tl"><span class="nom">Salade landaise</span><span class="fill"></span><span class="prix">21 €</span></p><small>salade, tomates, gésiers, magret fumé maison, foie gras de canard, toasts et olives</small></div>
+      </div>
+      <div>
+        <div class="plat"><p class="tl"><span class="nom">Salade italienne</span><span class="fill"></span><span class="prix">18 €</span></p><small>salade, tomates, légumes grillés, jambon cru, burrata, pesto et gressins</small></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="groupe">
+    <h3>Entrées</h3><div class="rule"></div>
+    <div class="cols">
+      <div>
+        <div class="plat"><p class="tl"><span class="nom">Foie gras de canard maison au Coteaux du Layon</span><span class="fill"></span><span class="prix">16 €</span></p><small>chutney d'oignons rouges et toasts <span class="supp">Menu +3 €</span></small></div>
+        <div class="plat"><p class="tl"><span class="nom">Gouline angevine</span><span class="fill"></span><span class="prix">9 €</span></p><small>rillauds, champignons, moutarde à l'ancienne, échalotes, sauce à la Tomme et sa salade verte</small></div>
+        <div class="plat"><p class="tl"><span class="nom">Œuf parfait</span><span class="fill"></span><span class="prix">10 €</span></p><small>mousseline de chou-fleur, saumon gravlax et tuile de sarrasin</small></div>
+      </div>
+      <div>
+        <div class="plat"><p class="tl"><span class="nom">Ceviche de dorade aux fruits de la passion</span><span class="fill"></span><span class="prix">10 €</span></p><small>crémeux de menthe et cébette</small></div>
+        <div class="plat"><p class="tl"><span class="nom">Vitello de veau</span><span class="fill"></span><span class="prix">10 €</span></p><small>origine France — jeunes pousses et sa crème d'ail noir</small></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="groupe">
+    <h3>Plats</h3><div class="rule"></div>
+    <div class="cols">
+      <div>
+        <div class="plat"><p class="tl"><span class="nom">Cassoulet de « La Ferme » maison</span><span class="fill"></span><span class="prix">24 €</span></p><small>origine France — confit de canard, saucisse artisanale, rillaud d'Anjou et haricots blancs <span class="supp">Menu +2 €</span></small></div>
+        <div class="plat"><p class="tl"><span class="nom">Demi-magret de canard</span><span class="fill"></span><span class="prix">22 €</span></p><small>origine France — sauce au poivre vert, purée de pommes de terre et légumes</small></div>
+        <div class="plat"><p class="tl"><span class="nom">Confit de canard</span><span class="fill"></span><span class="prix">20 €</span></p><small>origine France — sauce au poivre et pommes de terre sarladaises</small></div>
+        <div class="plat"><p class="tl"><span class="nom">Entrecôte de bœuf</span><span class="fill"></span><span class="prix">26 €</span></p><small>origine France — sauce au roquefort, frites maison et toasts <span class="supp">Menu +5 €</span></small></div>
+      </div>
+      <div>
+        <div class="plat"><p class="tl"><span class="nom">Tartare de bœuf préparé</span><span class="fill"></span><span class="prix">22 €</span></p><small>coupé au couteau, servi avec ses frites maison</small></div>
+        <div class="plat"><p class="tl"><span class="nom">Poêlée de Saint-Jacques</span><span class="fill"></span><span class="prix">24 €</span></p><small>crème de whisky et son risotto aux algues</small></div>
+        <div class="plat"><p class="tl"><span class="nom">Pavé de cabillaud en croûte d'herbes</span><span class="fill"></span><span class="prix">22 €</span></p><small>jus de cresson, purée de pommes de terre à la ciboulette et légumes glacés</small></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="groupe">
+    <h3>Desserts</h3><div class="rule"></div>
+    <div class="cols">
+      <div>
+        <div class="plat"><p class="tl"><span class="nom">Bouse de Vache « fameuse »</span><span class="fill"></span><span class="prix">11 €</span></p><small>grande profiterole, glace vanille, chocolat et caramel — « depuis 1988 à La Ferme » <span class="supp">Menu +2 €</span></small></div>
+        <div class="plat"><p class="tl"><span class="nom">Plateau de fromages et sa salade verte</span><span class="fill"></span><span class="prix">10 €</span></p><small>fromages au lait pasteurisé, à l'exception du Curé Nantais au lait cru</small></div>
+        <div class="plat"><p class="tl"><span class="nom">Croquant au chocolat</span><span class="fill"></span><span class="prix">10 €</span></p><small>feuilletine et praliné</small></div>
+        <div class="plat"><p class="tl"><span class="nom">Café gourmand</span><span class="fill"></span><span class="prix">11 €</span></p><small>4 gourmandises <span class="supp">Menu +2 €</span></small></div>
+        <div class="plat"><p class="tl"><span class="nom">Colonel</span><span class="fill"></span><span class="prix">11 €</span></p><small>glace citron et vodka <span class="supp">Menu +2 €</span></small></div>
+      </div>
+      <div>
+        <div class="plat"><p class="tl"><span class="nom">Crémet d'Anjou</span><span class="fill"></span><span class="prix">9 €</span></p><small>coulis de fruits rouges</small></div>
+        <div class="plat"><p class="tl"><span class="nom">Crème brûlée à la vanille de Bourbon</span><span class="fill"></span><span class="prix">9 €</span></p></div>
+        <div class="plat"><p class="tl"><span class="nom">Soupe de fraises</span><span class="fill"></span><span class="prix">9 €</span></p><small>espuma au limoncello</small></div>
+        <div class="plat"><p class="tl"><span class="nom">Dame blanche</span><span class="fill"></span><span class="prix">9 €</span></p><small>glace vanille, coulis chocolat chaud et crème fouettée maison</small></div>
+        <div class="plat"><p class="tl"><span class="nom">Glace Robin des Bois</span><span class="fill"></span><span class="prix">9 €</span></p><small>fraise, cassis, framboise et crème fouettée</small></div>
+        <div class="plat"><p class="tl"><span class="nom">Boule de glace au choix</span><span class="fill"></span><span class="prix">3 €</span></p><small>2 boules : 6 €</small></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mentions">
+    <div><b>Supplément menu</b>Les plats signalés « Menu + » s'ajoutent au prix du menu 29 € ou 35 €.</div>
+    <div><b>Règlement</b>Le restaurant La Ferme n'accepte plus les chèques comme mode de règlement.</div>
+    <div><b>Prix</b>Prix nets et taxes comprises. Nos mets sont entièrement réalisés par le Chef et son équipe.</div>
+  </div>
+</div></section>
+
+<section class="signature"><div class="wrap">
+  <div class="sig-in">
+    <div class="plaque plaque--sombre" aria-hidden="true"><b>DEPUIS</b><span>1988</span></div>
+    <div>
+      <p class="label">Le dessert de la maison</p>
+      <h2>La <em>Bouse de Vache</em>,<br>servie ici depuis 1988.</h2>
+      <p>Une grande profiterole, glace vanille, chocolat et caramel. Elle porte le nom le moins élégant de la carte et c'est celui que les clients retiennent — au point de la citer dans leurs avis avant même de parler du reste.</p>
+      <div class="sig-prix">
+        <div><span>11 €</span> <small>à la carte</small></div>
+        <div><span>+2 €</span> <small>au menu 29 € ou 35 €</small></div>
+      </div>
+      <div class="sig-avis">
+        <div>
+          <q>Détour obligatoire pour une tête de veau exceptionnelle et le dessert La Bouse de Vache.</q>
+          <cite>Morgane Le Goas</cite>
+        </div>
+        <div>
+          <q>La cuisine est sans blabla, mais très bien structurée, sérieuse mais d'aujourd'hui. Des entrées aux desserts, tout est maîtrisé.</q>
+          <cite>Sébastien Roux</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section class="groupes" id="groupes"><div class="wrap">
+  <div class="head">
+    <h2>Groupes, réceptions et bons cadeaux</h2>
+    <p class="label">Deux salles · terrasse</p>
+  </div>
+  <div class="groupes-in">
+    <div>
+      <div class="fiche">
+        <h3>Menus groupes</h3>
+        <ul>
+          <li>À partir de 20 personnes</li>
+          <li>Du mardi au vendredi, midi et soir, sur réservation uniquement</li>
+          <li>Menus à 29,00 € ou 35,00 € hors boisson</li>
+          <li>Choix des menus à nous transmettre au moins 72 h avant la réservation</li>
+          <li>Possibilité de forfait boisson — <a href="mailto:contact@restaurant-laferme.com">nous écrire</a> ou appeler le restaurant</li>
+        </ul>
+      </div>
+      <div class="fiche">
+        <h3>Réceptions et repas d'affaires</h3>
+        <ul>
+          <li>Deux grandes salles et une terrasse au pied de la cathédrale</li>
+          <li>Repas de famille, repas d'affaires, groupes touristiques</li>
+          <li>Repas de fin d'année entre amis, collègues ou entreprises</li>
+        </ul>
+      </div>
+      <div class="fiche">
+        <h3>Bon cadeau gourmand</h3>
+        <ul>
+          <li>Pour toutes les occasions : Noël, anniversaire, fête des mères et des pères</li>
+          <li>Demande par courriel à <a href="mailto:contact@restaurant-laferme.com">contact@restaurant-laferme.com</a> ou au <a href="tel:+33241870990">02 41 87 09 90</a></li>
+          <li>Règlement possible par virement</li>
+        </ul>
+      </div>
+    </div>
+    <figure>
+      <img src="img/table-dressee.jpg" alt="Table dressée à La Ferme : entrées, verres de vin rouge et blanc devant le buffet en bois de la salle" loading="lazy" width="1542" height="1240">
+      <figcaption>La salle, dressée pour le service du soir</figcaption>
+    </figure>
+  </div>
+</div></section>
+
+<section class="infos" id="infos"><div class="wrap">
+  <div class="head">
+    <h2>Infos pratiques</h2>
+    <p class="label">Centre-ville d'Angers</p>
+  </div>
+  <div class="infos-grid">
+    <div>
+      <h3>Horaires</h3>
+      <p>Du mardi au samedi,<br>midi et soir.<br>Midi : 12h00 – 14h00<br>Soir : 19h00 – 21h00</p>
+    </div>
+    <div>
+      <h3>Adresse</h3>
+      <p>2 place Freppel<br>49100 Angers<br>Entre la cathédrale et le château</p>
+    </div>
+    <div>
+      <h3>Réservation</h3>
+      <p><a href="tel:+33241870990">02 41 87 09 90</a><br><a href="mailto:contact@restaurant-laferme.com">contact@restaurant-laferme.com</a></p>
+    </div>
+    <div>
+      <h3>À emporter</h3>
+      <p>Un repas de prévu en amoureux ou entre amis ? Commandez au <a href="tel:+33241870990">02 41 87 09 90</a>.</p>
+    </div>
+  </div>
+  <p class="allerg"><b>Allergènes —</b> les produits utilisés dans notre cuisine pouvant être allergènes sont les suivants : gluten, crustacés, poissons, œufs, arachides, soja, lait, fruits à coques, céleri, moutarde, graines de sésame, anhydride sulfureux et sulfites, lupins et mollusques. Si vous avez la moindre question à ce sujet, n'hésitez pas à nous en faire part et à demander notre classeur des allergènes.</p>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="f-in">
+    <img src="img/logo-la-ferme-blanc.png" alt="La Ferme Restaurant" width="253" height="80" loading="lazy">
+    <div>2 place Freppel — 49100 Angers · <a href="tel:+33241870990">02 41 87 09 90</a> · <a href="mailto:contact@restaurant-laferme.com">contact@restaurant-laferme.com</a></div>
+    <div>© 2026 La Ferme Restaurant</div>
+  </div>
+  <p class="abus">L'abus d'alcool est dangereux pour la santé, à consommer avec modération.</p>
+</div></footer>
+
+<div class="demo-tag">Démonstration non commandée, créée par <b>Atelier Numera</b> · contenus et photos © La Ferme Restaurant · page retirée sous 14 jours ou immédiatement sur demande : <a href="mailto:atelier.numera@gmail.com">atelier.numera@gmail.com</a></div>
+
+</body>
+</html>

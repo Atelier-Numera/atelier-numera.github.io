@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>L'eau à la bouche — Péniche restaurant &amp; pizzeria, quai des Carmes à Angers</title>
+<meta name="description" content="Restaurant-pizzeria à bord d'une péniche amarrée 31 quai des Carmes, sur la Maine à Angers. Pizzas pétries chaque matin, viandes VBF de la Boucherie des Quais, pâtes fraîches d'Anjou. Réservation : 02 41 34 17 69.">
+<style>
+  :root{
+    /* palette relevée sur le logo et la salle de L'eau à la bouche */
+    --encre:#1a1917;         /* encre du logo #151514 */
+    --ardoise:#232420;       /* l'ardoise de la salle */
+    --creme:#fbf6ee;
+    --creme-2:#f2e9dc;
+    --corail:#ff9175;        /* arche du logo */
+    --corail-clair:#feae97;
+    --corail-pale:#ffddd5;
+    --corail-fonce:#a8503b;
+    --sauge:#a5c2b0;         /* la ligne d'eau du logo */
+    --sauge-fonce:#4d7360;
+    --ocre:#c9993a;          /* les chaises moutarde de la salle */
+    --gris:#6e6960;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+    --sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+    --max:1140px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+  body{font-family:var(--serif);font-size:17px;line-height:1.68;color:var(--encre);background:var(--creme);padding-bottom:76px;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--corail);outline-offset:3px;border-radius:2px}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 26px}
+  .kicker{font-family:var(--sans);font-size:.68rem;letter-spacing:.34em;text-transform:uppercase;font-weight:600}
+
+  /* ---------- bandeau utilitaire ---------- */
+  .bandeau{background:var(--ardoise);color:#e8e2d7;font-family:var(--sans);font-size:.74rem;letter-spacing:.06em}
+  .bandeau .wrap{display:flex;flex-wrap:wrap;gap:8px 30px;justify-content:space-between;padding-top:9px;padding-bottom:9px}
+  .bandeau b{color:var(--sauge);font-weight:600;letter-spacing:.2em;text-transform:uppercase;font-size:.68rem}
+
+  /* ---------- entête : logo sombre => fond clair ---------- */
+  .top{background:var(--creme);border-bottom:1px solid var(--creme-2);position:sticky;top:0;z-index:30}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:22px;padding-top:14px;padding-bottom:14px}
+  .top img{width:186px;height:auto;mix-blend-mode:multiply}
+  .top nav{display:flex;align-items:center;gap:24px;font-family:var(--sans);font-size:.74rem;letter-spacing:.19em;text-transform:uppercase;font-weight:600}
+  .top nav a{text-decoration:none;padding:4px 0;border-bottom:2px solid transparent;color:var(--encre)}
+  .top nav a:hover{border-bottom-color:var(--corail)}
+  .appel{background:var(--encre);color:var(--creme)!important;padding:11px 18px!important;border:none!important;border-radius:2px;white-space:nowrap}
+  .appel:hover{background:var(--corail-fonce)}
+
+  /* ---------- la ligne d'eau (motif repris du logo) ---------- */
+  .ligne-eau{display:block;width:100%;height:34px}
+  .ligne-eau.haute{height:46px}
+
+  /* ---------- héros ---------- */
+  .hero{padding:64px 0 26px}
+  .hero .in{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);gap:64px;align-items:center}
+  .hero .kicker{color:var(--corail-fonce);margin-bottom:20px}
+  .hero h1{font-size:clamp(2.35rem,5vw,3.75rem);line-height:1.07;font-weight:400;letter-spacing:-.012em}
+  .hero h1 em{font-style:italic;color:var(--corail-fonce)}
+  .hero .lede{margin-top:22px;max-width:47ch;color:#4a453e;font-size:1.06rem}
+  .actions{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px;font-family:var(--sans)}
+  .btn{display:inline-block;text-decoration:none;font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;padding:15px 25px;border-radius:2px}
+  .btn-plein{background:var(--corail);color:var(--encre)}
+  .btn-plein:hover{background:var(--corail-clair)}
+  .btn-ligne{border:1.5px solid var(--encre);color:var(--encre)}
+  .btn-ligne:hover{background:var(--encre);color:var(--creme)}
+  .hero .repere{margin-top:30px;display:flex;flex-wrap:wrap;gap:8px 26px;font-family:var(--sans);font-size:.79rem;color:var(--gris)}
+  .hero .repere span{position:relative;padding-left:15px}
+  .hero .repere span::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--sauge)}
+
+  /* l'arche : la forme du logo, reprise en cadre photo */
+  .arche{position:relative;margin:0}
+  .arche figure{margin:0;position:relative;z-index:2;overflow:hidden;border-radius:50% 50% 4px 4px / 34% 34% 4px 4px}
+  .arche img{width:100%;height:100%;object-fit:cover;display:block}
+  .arche::before{content:"";position:absolute;z-index:1;left:22px;top:24px;right:-22px;bottom:-24px;background:var(--corail-clair);border-radius:50% 50% 4px 4px / 34% 34% 4px 4px}
+  .arche figcaption{position:absolute;left:0;right:0;bottom:0;z-index:3;background:linear-gradient(to top,rgba(26,25,23,.82),rgba(26,25,23,0));color:#fff;font-family:var(--sans);font-size:.74rem;letter-spacing:.05em;padding:44px 20px 16px}
+  .hero .arche figure{aspect-ratio:5/7}
+
+  /* ---------- à bord ---------- */
+  .abord{padding:76px 0 82px}
+  .abord .in{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:60px;align-items:center}
+  .titre{font-size:clamp(1.75rem,3.2vw,2.5rem);font-weight:400;line-height:1.15;letter-spacing:-.01em}
+  .titre small{display:block;font-family:var(--sans);font-size:.68rem;letter-spacing:.34em;text-transform:uppercase;font-weight:600;color:var(--corail-fonce);margin-bottom:12px}
+  .abord p{margin-top:18px;color:#4a453e}
+  .abord p + p{margin-top:14px}
+  .abord figure{margin:0;overflow:hidden;border-radius:3px}
+  .abord img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/10}
+  .abord figcaption{font-family:var(--sans);font-size:.74rem;color:var(--gris);padding-top:9px}
+  .equipe{margin-top:26px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 30px;border-top:1px solid var(--creme-2);padding-top:20px}
+  .equipe dt{font-family:var(--sans);font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gris);margin-bottom:2px}
+  .equipe dd{font-size:1.28rem;line-height:1.3}
+
+  /* ---------- bande fournisseurs (l'ardoise) ---------- */
+  .fournis{background:var(--ardoise);color:#efe9de;padding:66px 0 70px}
+  .fournis .titre{color:#fff}
+  .fournis .titre small{color:var(--sauge)}
+  .fournis .intro{max-width:58ch;color:rgba(239,233,222,.76);margin-top:16px}
+  .registre{margin-top:42px;border-top:1px solid rgba(239,233,222,.22)}
+  .registre .l{display:grid;grid-template-columns:16px minmax(0,1.1fr) minmax(0,1.5fr) auto;gap:22px;align-items:baseline;padding:19px 0;border-bottom:1px solid rgba(239,233,222,.15)}
+  .registre .n{font-family:var(--sans);font-size:.68rem;color:var(--corail);font-weight:700}
+  .registre .q{font-size:1.14rem}
+  .registre .f{font-family:var(--sans);font-size:.86rem;color:rgba(239,233,222,.7)}
+  .registre .v{font-family:var(--sans);font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--sauge);white-space:nowrap}
+
+  /* ---------- carte ---------- */
+  .carte{padding:80px 0 86px}
+  .tete{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);align-items:end;gap:18px 50px;border-bottom:2px solid var(--encre);padding-bottom:18px;margin-bottom:14px}
+  .tete p{font-family:var(--sans);font-size:.8rem;color:var(--gris)}
+  .carte-grille{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 60px;margin-top:38px}
+  .bloc{break-inside:avoid;margin-bottom:34px}
+  .bloc h3{font-family:var(--sans);font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;font-weight:700;color:var(--encre);margin-bottom:6px;display:flex;align-items:center;gap:10px}
+  .bloc h3::before{content:"";flex:none;width:15px;height:11px;background:var(--corail);border-radius:50% 50% 1px 1px / 78% 78% 1px 1px}
+  .bloc .note{font-family:var(--sans);font-size:.78rem;color:var(--gris);font-style:normal;margin:0 0 16px 25px}
+  .bloc ul{list-style:none;margin-left:25px}
+  .plat{padding:7px 0}
+  .plat .r{display:flex;align-items:baseline;gap:9px}
+  .plat .nom{font-size:1.02rem}
+  .plat .fill{flex:1 1 auto;min-width:14px;border-bottom:1px dotted #c4bcac;transform:translateY(-5px)}
+  .plat .prix{flex:none;font-family:var(--sans);font-size:.88rem;font-weight:700;letter-spacing:.01em}
+  .plat .prix.attente{font-weight:600;color:var(--gris);text-transform:uppercase;font-size:.66rem;letter-spacing:.16em}
+  .plat .desc{display:block;font-size:.88rem;color:var(--gris);font-style:italic;line-height:1.45;max-width:52ch;margin-top:1px}
+  .plat.moment .nom::after{content:"";display:inline-block;width:7px;height:7px;background:var(--ocre);border-radius:50%;margin-left:8px;vertical-align:.12em}
+  .suppl{margin:14px 0 0 25px;padding:15px 18px;background:var(--creme-2);border-radius:3px;font-family:var(--sans);font-size:.82rem;color:#4a453e}
+  .suppl b{font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;display:block;margin-bottom:6px;color:var(--corail-fonce)}
+
+  /* encart photo au fil de la carte */
+  .encart{margin:0 0 34px}
+  .encart .arche figure{aspect-ratio:4/5}
+  .encart .arche::before{left:16px;top:18px;right:-16px;bottom:-18px}
+  .encart .legende{margin-top:36px;font-family:var(--sans);font-size:.82rem;color:var(--gris);border-left:2px solid var(--sauge);padding-left:16px}
+
+  /* ---------- suggestions du jour ---------- */
+  .jour{background:var(--creme-2);padding:56px 0 60px}
+  .jour .in{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.15fr) 224px;gap:44px;align-items:center}
+  .jour .arche figure{aspect-ratio:4/5}
+  .jour .arche::before{display:none}
+  .jour h2{font-size:clamp(1.5rem,2.6vw,2rem);font-weight:400;line-height:1.2}
+  .jour h2 small{display:block;font-family:var(--sans);font-size:.66rem;letter-spacing:.32em;text-transform:uppercase;font-weight:600;color:var(--ocre);margin-bottom:10px}
+  .jour ul{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 32px;font-family:var(--sans);font-size:.92rem}
+  .jour li{padding-left:19px;position:relative}
+  .jour li::before{content:"";position:absolute;left:0;top:.58em;width:8px;height:8px;background:var(--ocre);border-radius:50%}
+
+  /* ---------- bande photo pleine largeur ---------- */
+  .bandeau-photo{margin:0}
+  .bandeau-photo img{width:100%;height:clamp(230px,34vw,420px);object-fit:cover;object-position:center 58%}
+  .bandeau-photo figcaption{background:var(--ardoise);color:rgba(239,233,222,.72);font-family:var(--sans);font-size:.76rem;letter-spacing:.04em;padding:11px 26px;text-align:center}
+
+  /* ---------- à emporter ---------- */
+  .emporter{background:var(--corail-pale);padding:46px 0 50px}
+  .emporter .in{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:26px 56px;align-items:center}
+  .emporter .titre small{color:var(--corail-fonce)}
+  .emporter p{margin-top:14px;color:#4a453e;max-width:46ch}
+  .creneaux{display:flex;flex-wrap:wrap;gap:14px}
+  .creneaux div{background:var(--creme);border:1px solid rgba(200,115,93,.35);border-radius:3px;padding:14px 20px;min-width:150px}
+  .creneaux dt{font-family:var(--sans);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--corail-fonce);margin-bottom:3px}
+  .creneaux dd{font-size:1.16rem;font-variant-numeric:tabular-nums}
+  .paiements{margin-top:16px;font-family:var(--sans);font-size:.8rem;color:#5c564d}
+
+  /* ---------- privatisation ---------- */
+  .prive{padding:80px 0 84px}
+  .prive .in{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:58px;align-items:center}
+  .prive figure{margin:0;overflow:hidden;border-radius:3px}
+  .prive img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:center 62%}
+  .prive p{margin-top:18px;color:#4a453e}
+  .occasions{list-style:none;margin-top:24px;display:grid;grid-template-columns:repeat(2,1fr);gap:0}
+  .occasions li{font-family:var(--sans);font-size:.86rem;padding:11px 0;border-top:1px solid var(--creme-2)}
+  .occasions li::before{content:"—";color:var(--corail);margin-right:10px}
+
+  /* ---------- carnet de bord / contact ---------- */
+  .bord{background:var(--encre);color:#efe9de;padding:76px 0 70px}
+  .bord .in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:60px}
+  .bord .titre{color:#fff}
+  .bord .titre small{color:var(--sauge)}
+  .bord .tel-gros{display:inline-block;font-size:clamp(1.8rem,3.4vw,2.5rem);color:var(--corail);text-decoration:none;margin-top:22px;letter-spacing:.01em}
+  .bord .tel-gros:hover{color:var(--corail-clair)}
+  .bord address{font-style:normal;margin-top:14px;font-size:1.1rem;line-height:1.6;color:rgba(239,233,222,.86)}
+  .bord .mail{display:inline-block;margin-top:14px;font-family:var(--sans);font-size:.88rem;color:var(--sauge)}
+  .bord .acces{margin-top:26px;padding-top:20px;border-top:1px solid rgba(239,233,222,.2);font-family:var(--sans);font-size:.84rem;color:rgba(239,233,222,.72);display:grid;gap:8px}
+  .bord .acces span{padding-left:17px;position:relative}
+  .bord .acces span::before{content:"";position:absolute;left:0;top:.55em;width:8px;height:2px;background:var(--corail)}
+  .horaires{border:1px solid rgba(239,233,222,.24);border-radius:3px;padding:8px 24px 22px}
+  .horaires h3{font-family:var(--sans);font-size:.64rem;letter-spacing:.26em;text-transform:uppercase;color:var(--sauge);padding:18px 0 6px}
+  .horaires .l{display:flex;align-items:baseline;gap:12px;padding:11px 0;border-top:1px solid rgba(239,233,222,.14);font-family:var(--sans);font-size:.9rem}
+  .horaires .j{flex:none;width:132px;color:rgba(239,233,222,.72);font-size:.8rem;letter-spacing:.04em}
+  .horaires .h{font-variant-numeric:tabular-nums}
+  .horaires .ferme{color:rgba(239,233,222,.5)}
+  .saison{margin-top:18px;background:var(--ocre);color:#241f10;border-radius:3px;padding:14px 18px;font-family:var(--sans);font-size:.84rem;font-weight:600}
+  .saison b{display:block;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;opacity:.75;margin-bottom:3px}
+
+  footer{background:var(--ardoise);color:rgba(239,233,222,.6);font-family:var(--sans);font-size:.8rem;padding:26px 0 30px}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:12px 26px;justify-content:space-between;align-items:center}
+  footer a{color:rgba(239,233,222,.8)}
+  footer nav{display:flex;flex-wrap:wrap;gap:18px}
+
+  .demo-tag{position:fixed;bottom:0;left:0;right:0;background:#fff8e6;border-top:1px solid #e8d9a0;color:#5f5426;text-align:center;padding:10px 16px;font-size:.8rem;font-family:var(--sans);line-height:1.45;z-index:80}
+  .demo-tag a{color:#5f5426}
+
+  @media(max-width:960px){
+    .hero .in,.abord .in,.prive .in,.bord .in{grid-template-columns:1fr;gap:44px}
+    .emporter .in{grid-template-columns:1fr;gap:24px}
+    .jour .in{grid-template-columns:minmax(0,1fr) 190px;gap:30px}
+    .jour h2{grid-column:1/-1}
+    .carte-grille{grid-template-columns:1fr;gap:0}
+    .tete{grid-template-columns:1fr;gap:14px}
+    .encart{max-width:420px;margin:0 auto 40px}
+    .top nav a:not(.appel){display:none}
+    .registre .l{grid-template-columns:16px 1fr;gap:6px 18px}
+    .registre .f{grid-column:2}
+    .registre .v{grid-column:2;color:var(--sauge)}
+  }
+  @media(max-width:560px){
+    body{font-size:16px;padding-bottom:104px}
+    .wrap{padding:0 18px}
+    .hero{padding-top:44px}
+    .abord,.prive{padding:56px 0}
+    .carte{padding:56px 0 60px}
+    .fournis,.bord{padding:52px 0 56px}
+    .top img{width:150px}
+    .jour ul,.occasions{grid-template-columns:1fr}
+    .jour .in{grid-template-columns:1fr;gap:26px}
+    .jour .arche{max-width:230px}
+    .creneaux div{min-width:0;flex:1 1 140px}
+    .horaires .j{width:100%;flex:none}
+    .horaires .l{flex-wrap:wrap;gap:2px}
+    .arche::before{left:12px;top:14px;right:-12px;bottom:-14px}
+    .equipe{gap:0 22px}
+  }
+</style>
+</head>
+<body>
+
+<div class="bandeau">
+  <div class="wrap">
+    <span><b>À quai</b> &nbsp;31 quai des Carmes, 49100 Angers — sur la Maine, face au château</span>
+    <span><b>À emporter</b> &nbsp;pizzas, 12h00–14h00 &amp; 19h15–22h00</span>
+  </div>
+</div>
+
+<header class="top">
+  <div class="wrap">
+    <a href="#" aria-label="L'eau à la bouche — accueil"><img src="img/logo.png" alt="Logo de L'eau à la bouche, péniche restaurant à Angers" width="513" height="197"></a>
+    <nav aria-label="Navigation principale">
+      <a href="#abord">La péniche</a>
+      <a href="#carte">La carte</a>
+      <a href="#prive">Événements</a>
+      <a href="#bord">Nous trouver</a>
+      <a class="appel" href="tel:+33241341769">02 41 34 17 69</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HÉROS ================= -->
+<section class="hero">
+  <div class="wrap in">
+    <div>
+      <p class="kicker">Péniche restaurant &amp; pizzeria · Angers</p>
+      <h1>Une table <em>sur la Maine</em>, amarrée quai des Carmes.</h1>
+      <p class="lede">L'eau à la bouche est un restaurant-pizzeria installé à bord d'un bateau, à deux pas du théâtre du Quai, des nouvelles halles et du centre-ville. Un cadre atypique donnant sur le château, repris en 2020 par l'ancien chef cuisinier.</p>
+      <div class="actions">
+        <a class="btn btn-plein" href="tel:+33241341769">Réserver — 02 41 34 17 69</a>
+        <a class="btn btn-ligne" href="#carte">Voir la carte</a>
+      </div>
+      <p class="repere">
+        <span>Mardi au samedi, midi et soir</span>
+        <span>Ouvert 7j/7 en juin, juillet et août</span>
+        <span>Accès PMR · tramway · stationnement</span>
+      </p>
+    </div>
+    <div class="arche">
+      <figure>
+        <img src="img/terrasse-maine.jpg" alt="Verre servi sur la terrasse de la péniche, la Maine et les clochers d'Angers en arrière-plan" width="800" height="1200">
+        <figcaption>La terrasse, sur le pont — vue sur la Maine et les tours d'Angers</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<svg class="ligne-eau haute" viewBox="0 0 1200 46" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+  <path d="M0 24 C 100 6, 200 6, 300 22 S 500 40, 600 24 S 800 6, 900 22 S 1100 40, 1200 24" fill="none" stroke="#a5c2b0" stroke-width="3" stroke-linecap="round"/>
+  <path d="M0 36 C 120 20, 240 20, 360 34 S 600 50, 720 36 S 960 20, 1080 34 L 1200 37" fill="none" stroke="#a5c2b0" stroke-width="2.2" stroke-linecap="round" opacity=".55"/>
+</svg>
+
+<!-- ================= À BORD ================= -->
+<section class="abord" id="abord">
+  <div class="wrap in">
+    <div>
+      <h2 class="titre"><small>Le bateau</small>Dix ans de navigation, d'Ancenis au quai des Carmes</h2>
+      <p>Ce bateau emblématique a vu le jour il y a une décennie, pour le plus grand bonheur des amoureux de la Loire. D'abord amarré à Ancenis, il a rapidement trouvé son ancrage à Angers, devenant un repère pour les habitants et les visiteurs de la région.</p>
+      <p>Après deux propriétaires passionnés qui ont su faire évoluer ce projet, c'est aujourd'hui notre tour de prendre les rênes de ce navire. Seul, à deux, en famille ou entre amis : bienvenue à bord.</p>
+      <dl class="equipe">
+        <div><dt>Repris en</dt><dd>2020</dd></div>
+        <div><dt>Par</dt><dd>l'ancien chef</dd></div>
+        <div><dt>Équipe</dt><dd>4 permanents</dd></div>
+        <div><dt>Renfort</dt><dd>saisonniers</dd></div>
+      </dl>
+    </div>
+    <figure>
+      <img src="img/salle-bar.jpg" alt="La salle de la péniche : tables en chêne clair, chaises vert sauge et moutarde, bar carrelé vert et ardoise des suggestions" width="1920" height="1064">
+      <figcaption>La salle, côté bar — l'ardoise des suggestions change chaque jour.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ================= FOURNISSEURS ================= -->
+<section class="fournis">
+  <div class="wrap">
+    <h2 class="titre"><small>Chaque matin</small>Nos fournisseurs tiennent dans un rayon de quelques rues</h2>
+    <p class="intro">Chaque matin, nos chefs se déplacent chez notre boucher artisanal local et sélectionnent les viandes les plus délicates. Notre pizzaiolo pétrit sa pâte le matin même. Et chaque jour, un plat et un dessert sont élaborés selon les arrivages de nos fournisseurs.</p>
+    <div class="registre">
+      <div class="l"><span class="n">01</span><span class="q">Grande Boucherie des Quais</span><span class="f">Viande Bovine Française — pavés, tartares, steaks hachés</span><span class="v">Angers</span></div>
+      <div class="l"><span class="n">02</span><span class="q">Maison du Pain Soulard</span><span class="f">Pains artisanaux pour nos burgers et nos croques</span><span class="v">Angers</span></div>
+      <div class="l"><span class="n">03</span><span class="q">Anjou Pâtes Fraîches</span><span class="f">Pâtes fraîches artisanales, ravioles du moment</span><span class="v">Angers</span></div>
+      <div class="l"><span class="n">04</span><span class="q">Le Crémet d'Anjou</span><span class="f">Le véritable crémet — spécialité de la région d'Angers</span><span class="v">Anjou</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LA CARTE ================= -->
+<section class="carte" id="carte">
+  <div class="wrap">
+    <div class="tete">
+      <h2 class="titre"><small>La carte</small>Entrées, salades, pizzas, viandes, pâtes fraîches et desserts</h2>
+      <p>Extrait de la carte servie à bord. Les plats signalés d'un point ocre changent selon le marché et sont annoncés à l'ardoise.</p>
+    </div>
+
+    <div class="carte-grille">
+      <!-- colonne gauche -->
+      <div>
+        <div class="bloc">
+          <h3>Les entrées</h3>
+          <p class="note">À partager… ou pas.</p>
+          <ul>
+            <li class="plat"><span class="r"><span class="nom">Foie gras de canard maison</span><span class="fill"></span><span class="prix">13,90 €</span></span><span class="desc">Au Côteaux du Layon et piment d'Espelette, pain d'épices et confit d'oignons</span></li>
+            <li class="plat"><span class="r"><span class="nom">Assiette de charcuteries — petite / grande</span><span class="fill"></span><span class="prix">14,90 / 26,90 €</span></span><span class="desc">Spianata, saucisson, jambon Serrano, rillettes de porc maison</span></li>
+            <li class="plat"><span class="r"><span class="nom">Assiette mixte — petite / grande</span><span class="fill"></span><span class="prix">16,90 / 28,90 €</span></span><span class="desc">Charcuteries, Comté, Tomme de Loire, chèvre cendré</span></li>
+            <li class="plat"><span class="r"><span class="nom">Rillettes de porc maison et ses toasts</span><span class="fill"></span><span class="prix">6,90 €</span></span></li>
+            <li class="plat"><span class="r"><span class="nom">Camembert rôti romarin et miel</span><span class="fill"></span><span class="prix">7,90 €</span></span></li>
+            <li class="plat"><span class="r"><span class="nom">Demi-croque jambon blanc, truffe et Comté</span><span class="fill"></span><span class="prix">10,90 €</span></span></li>
+            <li class="plat"><span class="r"><span class="nom">Tartine chaude, jambon Serrano et Curé Nantais</span><span class="fill"></span><span class="prix">8,90 €</span></span></li>
+            <li class="plat"><span class="r"><span class="nom">Tartine chaude, saumon frais et crème aux herbes</span><span class="fill"></span><span class="prix">8,90 €</span></span></li>
+          </ul>
+          <p class="suppl"><b>Bon à savoir</b>Toutes les tartines chaudes et les demi-croques sont servis avec de la salade verte.</p>
+        </div>
+
+        <div class="bloc">
+          <h3>Les salades</h3>
+          <ul>
+            <li class="plat"><span class="r"><span class="nom">Salade Angevine</span><span class="fill"></span><span class="prix">17,80 €</span></span><span class="desc">Croustillants de chèvre, rillauds déglacés au balsamique de framboise, pommes fruits, oignons rouges, moutarde à l'ancienne</span></li>
+            <li class="plat"><span class="r"><span class="nom">Salade Burrata</span><span class="fill"></span><span class="prix">17,90 €</span></span><span class="desc">Mesclun, Burrata, jambon Serrano, Grana Padano, pesto, tomates, oignons rouges</span></li>
+            <li class="plat"><span class="r"><span class="nom">Salade César revisitée</span><span class="fill"></span><span class="prix">17,90 €</span></span><span class="desc">Poulet, œufs, sauce César maison, tomates cerises, croûtons de pain</span></li>
+          </ul>
+        </div>
+
+        <div class="bloc">
+          <h3>Les viandes</h3>
+          <p class="note">Viande Bovine Française — Boucherie des Quais, Angers. Servies avec frites maison et salade verte.</p>
+          <ul>
+            <li class="plat"><span class="r"><span class="nom">Pavé de bœuf (180 g)</span><span class="fill"></span><span class="prix">22,90 €</span></span></li>
+            <li class="plat"><span class="r"><span class="nom">Pavé de bœuf façon Rossini (180 g)</span><span class="fill"></span><span class="prix">27,00 €</span></span></li>
+            <li class="plat"><span class="r"><span class="nom">Tartare de bœuf (180 g)</span><span class="fill"></span><span class="prix">18,90 €</span></span></li>
+            <li class="plat"><span class="r"><span class="nom">Tartare italien de bœuf (180 g)</span><span class="fill"></span><span class="prix">19,90 €</span></span><span class="desc">Pesto, Parmesan, tomates, roquette</span></li>
+          </ul>
+        </div>
+
+        <div class="bloc">
+          <h3>Les pâtes fraîches</h3>
+          <p class="note">Pâtes artisanales — Anjou Pâtes Fraîches, Angers.</p>
+          <ul>
+            <li class="plat moment"><span class="r"><span class="nom">Ravioles du moment</span><span class="fill"></span><span class="prix attente">Suggestions</span></span></li>
+            <li class="plat"><span class="r"><span class="nom">Pâtes fraîches au saumon</span><span class="fill"></span><span class="prix">17,80 €</span></span><span class="desc">Saumon frais, crème aux herbes citronnée, Grana Padano</span></li>
+            <li class="plat"><span class="r"><span class="nom">Bleu d'Auvergne et jambon Serrano</span><span class="fill"></span><span class="prix">17,80 €</span></span></li>
+            <li class="plat"><span class="r"><span class="nom">Sauce champignons</span><span class="fill"></span><span class="prix">14,80 €</span></span><span class="desc">Supplément poulet grillé + 3,00 €</span></li>
+          </ul>
+        </div>
+
+        <div class="bloc">
+          <h3>Les desserts</h3>
+          <ul>
+            <li class="plat"><span class="r"><span class="nom">Le véritable Crémet d'Anjou</span><span class="fill"></span><span class="prix">7,90 €</span></span><span class="desc">Spécialité de la région d'Angers — crème fouettée, sucre et blancs d'œufs en neige, coulis de fruits</span></li>
+            <li class="plat"><span class="r"><span class="nom">Panna cotta au poivre de Sichuan, coulis de mangue</span><span class="fill"></span><span class="prix">7,90 €</span></span></li>
+            <li class="plat"><span class="r"><span class="nom">Crème brûlée vanille-pistache</span><span class="fill"></span><span class="prix">7,90 €</span></span></li>
+            <li class="plat"><span class="r"><span class="nom">Mousse au chocolat</span><span class="fill"></span><span class="prix">7,90 €</span></span></li>
+            <li class="plat"><span class="r"><span class="nom">Brioche perdue &amp; caramel beurre salé</span><span class="fill"></span><span class="prix">8,50 €</span></span><span class="desc">Et sa glace vanille</span></li>
+            <li class="plat"><span class="r"><span class="nom">Tiramisu Spéculoos</span><span class="fill"></span><span class="prix">8,90 €</span></span></li>
+            <li class="plat"><span class="r"><span class="nom">Trio de fromage</span><span class="fill"></span><span class="prix">8,90 €</span></span></li>
+            <li class="plat"><span class="r"><span class="nom">Café ou thé gourmand</span><span class="fill"></span><span class="prix">8,90 €</span></span></li>
+            <li class="plat moment"><span class="r"><span class="nom">Dessert du moment</span><span class="fill"></span><span class="prix attente">Suggestions</span></span></li>
+          </ul>
+          <p class="suppl"><b>Les glaces</b>Café, caramel, cassis, citron vert, chocolat, fraises, rhum-raisin, vanille — 1 boule 2,80 € · 2 boules 4,90 € · 3 boules 6,60 € · chantilly 1,60 €</p>
+        </div>
+        <div class="bloc">
+          <h3>Menu enfant · moins de 12 ans</h3>
+          <ul>
+            <li class="plat"><span class="r"><span class="nom">Plat au choix, dessert et boisson</span><span class="fill"></span><span class="prix">12,90 €</span></span><span class="desc">Pizza Bambino, pâtes fraîches jambon-emmental ou steak haché / poulet pané et frites maison — puis deux boules de glace ou mousse au chocolat, sirop à l'eau, diabolo ou jus de fruit</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- colonne droite -->
+      <div>
+        <div class="encart">
+          <div class="arche">
+            <figure>
+              <img src="img/pizza-sortie-four.jpg" alt="Pizza à la sortie du four sur sa plaque, pâte boursouflée et roquette fraîche" width="800" height="1200">
+              <figcaption>Pâte pétrie chaque matin par notre pizzaiolo</figcaption>
+            </figure>
+          </div>
+          <p class="legende">« Notre pizzaiolo met en œuvre son savoir-faire pour préparer chaque matin une pâte fraîche, en utilisant exclusivement des ingrédients de première qualité provenant d'artisans locaux. »</p>
+        </div>
+
+        <div class="bloc">
+          <h3>Les pizzas — les classiques</h3>
+          <ul>
+            <li class="plat"><span class="r"><span class="nom">Marguerita</span><span class="fill"></span><span class="prix">10,20 €</span></span></li>
+            <li class="plat"><span class="r"><span class="nom">Reine</span><span class="fill"></span><span class="prix">12,40 €</span></span></li>
+            <li class="plat"><span class="r"><span class="nom">Végétarienne</span><span class="fill"></span><span class="prix">14,40 €</span></span><span class="desc">Tomates, poivrons, courgettes, pommes de terre, champignons, roquette, pesto</span></li>
+            <li class="plat"><span class="r"><span class="nom">Calzone</span><span class="fill"></span><span class="prix">14,40 €</span></span><span class="desc">Emmental, œuf, crème fraîche, champignons, jambon blanc</span></li>
+            <li class="plat"><span class="r"><span class="nom">Royale</span><span class="fill"></span><span class="prix">15,40 €</span></span></li>
+            <li class="plat"><span class="r"><span class="nom">4 fromages</span><span class="fill"></span><span class="prix">15,40 €</span></span><span class="desc">Gruyère, chèvre, Bleu d'Auvergne, Reblochon</span></li>
+            <li class="plat"><span class="r"><span class="nom">Reblochon</span><span class="fill"></span><span class="prix">15,40 €</span></span></li>
+            <li class="plat"><span class="r"><span class="nom">Mexicaine</span><span class="fill"></span><span class="prix">15,40 €</span></span></li>
+            <li class="plat"><span class="r"><span class="nom">Spéciale</span><span class="fill"></span><span class="prix">15,40 €</span></span><span class="desc">Curé Nantais, poulet, pommes de terre, moutarde à l'ancienne</span></li>
+            <li class="plat"><span class="r"><span class="nom">Chevrette</span><span class="fill"></span><span class="prix">15,40 €</span></span><span class="desc">Lardons, chèvre, miel, oignons, roquette</span></li>
+            <li class="plat"><span class="r"><span class="nom">Norvégienne</span><span class="fill"></span><span class="prix">16,40 €</span></span><span class="desc">Base crème, saumon frais, oignons, citron, aneth</span></li>
+          </ul>
+        </div>
+
+        <div class="bloc">
+          <h3>Les pizzas — les signatures</h3>
+          <ul>
+            <li class="plat"><span class="r"><span class="nom">Angevine</span><span class="fill"></span><span class="prix">15,90 €</span></span><span class="desc">Galet de Loire, rillauds, pommes fruits, champignons</span></li>
+            <li class="plat"><span class="r"><span class="nom">Nantaise</span><span class="fill"></span><span class="prix">15,90 €</span></span><span class="desc">Curé Nantais, jambon Serrano, champignons</span></li>
+            <li class="plat"><span class="r"><span class="nom">Spianata</span><span class="fill"></span><span class="prix">15,90 €</span></span><span class="desc">Base N'duja, Spianata, Mozzarella, roquette, pesto — pizza épicée</span></li>
+            <li class="plat"><span class="r"><span class="nom">Truffée</span><span class="fill"></span><span class="prix">15,90 €</span></span><span class="desc">Base truffée, jambon Serrano, roquette</span></li>
+            <li class="plat"><span class="r"><span class="nom">Burrata</span><span class="fill"></span><span class="prix">15,90 €</span></span><span class="desc">Roquette, Burrata, pesto</span></li>
+            <li class="plat"><span class="r"><span class="nom">Tourte</span><span class="fill"></span><span class="prix">20,90 €</span></span><span class="desc">Emmental, rillauds, chèvre, miel, oignons, champignons</span></li>
+            <li class="plat moment"><span class="r"><span class="nom">Pizza du moment</span><span class="fill"></span><span class="prix attente">Suggestions</span></span></li>
+          </ul>
+          <p class="suppl"><b>Suppléments</b>Burrata 4,90 € · viandes et fromages 2,50 € · légumes et œuf 1,70 € · toutes nos pizzas peuvent être réalisées en base crème + 0,70 €</p>
+        </div>
+
+        <div class="bloc">
+          <h3>Les burgers &amp; croques</h3>
+          <p class="note">Pains artisanaux — Maison du Pain Soulard, Angers. Servis avec frites maison.</p>
+          <ul>
+            <li class="plat"><span class="r"><span class="nom">Burger Italien</span><span class="fill"></span><span class="prix">18,90 €</span></span><span class="desc">Pesto, sauce burger, steak haché 150 g, Mozzarella, tomates, roquette</span></li>
+            <li class="plat"><span class="r"><span class="nom">Burger Gourmand</span><span class="fill"></span><span class="prix">18,90 €</span></span><span class="desc">Sauce burger, cornichons, steak haché 150 g, Tomme de Loire</span></li>
+            <li class="plat"><span class="r"><span class="nom">Burger Saumon</span><span class="fill"></span><span class="prix">19,90 €</span></span><span class="desc">Tartare de saumon frais maison, crème aux herbes citronnée</span></li>
+            <li class="plat"><span class="r"><span class="nom">Croque truffe et Comté</span><span class="fill"></span><span class="prix">18,90 €</span></span><span class="desc">Pain de campagne, base truffée, jambon blanc, Comté, salade</span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SUGGESTIONS ================= -->
+<section class="jour">
+  <div class="wrap in">
+    <h2><small>À l'ardoise</small>Ce qui change tous les jours</h2>
+    <ul>
+      <li>Le plat du moment</li>
+      <li>Le poisson du moment</li>
+      <li>Les ravioles du moment</li>
+      <li>La pizza du moment</li>
+      <li>Le dessert du moment</li>
+      <li>Selon les arrivages de nos fournisseurs</li>
+    </ul>
+    <div class="arche">
+      <figure>
+        <img src="img/plat-du-jour-pont.jpg" alt="Assiette creuse bleue tenue au-dessus du pont en bois de la péniche, l'eau de la Maine derrière" width="800" height="1200">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<figure class="bandeau-photo">
+  <img src="img/hero-table-hublot.jpg" alt="Deux assiettes servies sur une table en chêne, le long des vitres de la péniche" width="1920" height="1064">
+  <figcaption>À table, à bord — 31 quai des Carmes, Angers.</figcaption>
+</figure>
+
+<!-- ================= À EMPORTER ================= -->
+<section class="emporter">
+  <div class="wrap in">
+    <div>
+      <h2 class="titre"><small>Service à emporter</small>Nos pizzas, chez vous</h2>
+      <p>Profitez de nos pizzas depuis le confort de votre foyer. Le service à emporter est valable exclusivement pour les pizzas, pendant nos horaires d'ouverture.</p>
+    </div>
+    <div>
+      <dl class="creneaux">
+        <div><dt>Le midi</dt><dd>12h00 – 14h00</dd></div>
+        <div><dt>Le soir</dt><dd>19h15 – 22h00</dd></div>
+      </dl>
+      <p class="paiements">Tickets repas, paiement sans contact, carte bancaire et espèces acceptés.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRIVATISATION ================= -->
+<section class="prive" id="prive">
+  <div class="wrap in">
+    <div>
+      <h2 class="titre"><small>Événements</small>Privatiser la péniche et sa terrasse</h2>
+      <p>Imaginez-vous, entouré de vos amis et de vos collègues, à bord de notre péniche. Vous pouvez élaborer un menu sur mesure, choisir le décor et personnaliser chaque aspect de votre réception — notre équipe travaille avec vous sur chaque détail.</p>
+      <p>Notre terrasse, dotée d'une vue splendide sur la Maine, est idéale pour les réceptions en plein air.</p>
+      <ul class="occasions">
+        <li>Mariage</li>
+        <li>Anniversaire</li>
+        <li>Réunion de famille</li>
+        <li>Départ en retraite</li>
+        <li>Séminaire</li>
+        <li>Réunion d'affaires</li>
+        <li>Conférence</li>
+        <li>Dîner de gala</li>
+      </ul>
+      <div class="actions">
+        <a class="btn btn-plein" href="tel:+33241341769">Parler de votre événement</a>
+      </div>
+    </div>
+    <figure>
+      <img src="img/salle-tablee.jpg" alt="Grande tablée dressée dans la salle de la péniche, verres à vin et serviettes, chaises vert sauge et moutarde" width="1920" height="1064">
+    </figure>
+  </div>
+</section>
+
+<svg class="ligne-eau" viewBox="0 0 1200 46" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+  <path d="M0 24 C 100 6, 200 6, 300 22 S 500 40, 600 24 S 800 6, 900 22 S 1100 40, 1200 24" fill="none" stroke="#a5c2b0" stroke-width="3" stroke-linecap="round"/>
+  <path d="M0 36 C 120 20, 240 20, 360 34 S 600 50, 720 36 S 960 20, 1080 34 L 1200 37" fill="none" stroke="#a5c2b0" stroke-width="2.2" stroke-linecap="round" opacity=".55"/>
+</svg>
+
+<!-- ================= CARNET DE BORD ================= -->
+<section class="bord" id="bord">
+  <div class="wrap in">
+    <div>
+      <h2 class="titre"><small>Nous trouver</small>Le carnet de bord</h2>
+      <a class="tel-gros" href="tel:+33241341769">02 41 34 17 69</a>
+      <address>
+        31 quai des Carmes<br>
+        49100 Angers
+      </address>
+      <a class="mail" href="mailto:leaualabouche49@gmail.com">leaualabouche49@gmail.com</a>
+      <div class="acces">
+        <span>Sur la Maine, à proximité du théâtre du Quai, des nouvelles halles, de Fleur d'eau et du centre-ville</span>
+        <span>Accès pour les personnes à mobilité réduite</span>
+        <span>Stationnement à proximité, tramway</span>
+        <span>Tickets repas, sans contact, carte bancaire, espèces</span>
+      </div>
+    </div>
+    <div>
+      <div class="horaires">
+        <h3>Horaires du restaurant</h3>
+        <div class="l"><span class="j">Dimanche &amp; lundi</span><span class="h ferme">Fermé</span></div>
+        <div class="l"><span class="j">Mardi au vendredi</span><span class="h">12h00 – 14h00 &nbsp;·&nbsp; 19h00 – 22h00</span></div>
+        <div class="l"><span class="j">Samedi</span><span class="h">12h30 – 14h00 &nbsp;·&nbsp; 19h00 – 22h00</span></div>
+        <div class="l"><span class="j">À emporter (pizzas)</span><span class="h">12h00 – 14h00 &nbsp;·&nbsp; 19h15 – 22h00</span></div>
+      </div>
+      <p class="saison"><b>En saison</b>Ouvert 7j/7, midi et soir, en juin, juillet et août.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>L'eau à la bouche — péniche restaurant &amp; pizzeria, 31 quai des Carmes, 49100 Angers</span>
+    <nav aria-label="Liens externes">
+      <a href="https://www.instagram.com/leaualabouche_angers/" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/pizzaangers" rel="noopener">Facebook</a>
+      <a href="tel:+33241341769">02 41 34 17 69</a>
+    </nav>
+  </div>
+</footer>
+
+<div class="demo-tag">Démonstration non commandée, créée par <b>Atelier Numera</b> · contenus et photos © L'eau à la bouche · page retirée sous 14 jours ou immédiatement sur demande : <a href="mailto:atelier.numera@gmail.com">atelier.numera@gmail.com</a></div>
+
+</body>
+</html>
